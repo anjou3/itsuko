@@ -1,0 +1,796 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<title>五高同窓会 2026</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300;400;600;700&family=Noto+Sans+JP:wght@300;400;500&family=Playfair+Display:ital,wght@0,700;1,400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy: #1a2340;
+    --gold: #c9a84c;
+    --gold-light: #e8c96d;
+    --cream: #faf7f0;
+    --warm-white: #fff9f0;
+    --text: #2d2d2d;
+    --text-light: #666;
+    --border: rgba(201,168,76,0.3);
+    --shadow: 0 8px 40px rgba(26,35,64,0.12);
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: var(--cream);
+    color: var(--text);
+    font-family: 'Noto Sans JP', sans-serif;
+    font-weight: 300;
+    line-height: 1.8;
+    overflow-x: hidden;
+  }
+
+  /* ── HERO ── */
+  .hero {
+    background: var(--navy);
+    position: relative;
+    overflow: hidden;
+    padding: 60px 24px 56px;
+    text-align: center;
+  }
+  .hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse 80% 60% at 50% 100%, rgba(201,168,76,0.18) 0%, transparent 70%);
+  }
+  .hero-ornament {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    margin-bottom: 20px;
+  }
+  .hero-ornament span {
+    display: block;
+    height: 1px;
+    width: 48px;
+    background: var(--gold);
+    opacity: 0.6;
+  }
+  .hero-ornament i {
+    color: var(--gold);
+    font-style: normal;
+    font-size: 18px;
+    letter-spacing: 4px;
+  }
+  .hero-sub {
+    font-family: 'Noto Serif JP', serif;
+    color: var(--gold);
+    font-size: 13px;
+    letter-spacing: 6px;
+    text-transform: uppercase;
+    margin-bottom: 14px;
+    opacity: 0.9;
+  }
+  .hero-title {
+    font-family: 'Noto Serif JP', serif;
+    color: #fff;
+    font-size: clamp(28px, 8vw, 44px);
+    font-weight: 600;
+    line-height: 1.3;
+    margin-bottom: 8px;
+    position: relative;
+  }
+  .hero-title em {
+    font-style: italic;
+    font-family: 'Playfair Display', serif;
+    color: var(--gold-light);
+    font-size: 0.9em;
+  }
+  .hero-year {
+    font-family: 'Playfair Display', serif;
+    color: rgba(255,255,255,0.25);
+    font-size: clamp(60px, 18vw, 110px);
+    font-weight: 700;
+    line-height: 1;
+    letter-spacing: -2px;
+    position: relative;
+    margin: 4px 0 0;
+  }
+  .hero-badges {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 28px;
+    position: relative;
+  }
+  .badge {
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(201,168,76,0.4);
+    border-radius: 40px;
+    padding: 8px 18px;
+    color: rgba(255,255,255,0.9);
+    font-size: 13px;
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    letter-spacing: 0.5px;
+  }
+  .badge .dot { color: var(--gold); font-size: 18px; line-height: 1; }
+
+  /* ── SECTION ── */
+  section {
+    padding: 52px 20px;
+    max-width: 680px;
+    margin: 0 auto;
+  }
+  .section-label {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 28px;
+  }
+  .section-label::before, .section-label::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: var(--border);
+  }
+  .section-label span {
+    font-size: 11px;
+    letter-spacing: 5px;
+    color: var(--gold);
+    font-weight: 500;
+    white-space: nowrap;
+    text-transform: uppercase;
+  }
+  h2 {
+    font-family: 'Noto Serif JP', serif;
+    font-size: 22px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    color: var(--navy);
+  }
+
+  /* ── INFO CARD ── */
+  .info-grid {
+    display: grid;
+    gap: 12px;
+  }
+  .info-card {
+    background: #fff;
+    border-radius: 16px;
+    padding: 20px 22px;
+    border: 1px solid rgba(0,0,0,0.06);
+    box-shadow: var(--shadow);
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+  }
+  .info-icon {
+    width: 44px;
+    height: 44px;
+    background: linear-gradient(135deg, var(--navy) 0%, #2d3f6e 100%);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    flex-shrink: 0;
+  }
+  .info-label {
+    font-size: 11px;
+    color: var(--text-light);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 4px;
+  }
+  .info-value {
+    font-family: 'Noto Serif JP', serif;
+    font-size: 16px;
+    color: var(--navy);
+    font-weight: 600;
+    line-height: 1.4;
+  }
+  .info-value small {
+    display: block;
+    font-family: 'Noto Sans JP', sans-serif;
+    font-weight: 300;
+    font-size: 12px;
+    color: var(--text-light);
+    margin-top: 2px;
+  }
+
+  /* ── FLOW ── */
+  .flow-divider {
+    background: linear-gradient(135deg, var(--navy) 0%, #2d3f6e 100%);
+    margin: 0;
+    padding: 52px 20px;
+  }
+  .flow-divider > * { max-width: 680px; margin-inline: auto; }
+  .flow-divider h2 { color: #fff; }
+  .flow-divider .section-label::before,
+  .flow-divider .section-label::after { background: rgba(201,168,76,0.3); }
+  .flow-divider .section-label span { color: var(--gold-light); }
+
+  .tabs {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 6px;
+    margin-bottom: 24px;
+  }
+  .tab-btn {
+    padding: 10px 6px;
+    border-radius: 10px;
+    border: 1px solid rgba(201,168,76,0.3);
+    background: rgba(255,255,255,0.06);
+    color: rgba(255,255,255,0.6);
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 12px;
+    cursor: pointer;
+    text-align: center;
+    transition: all 0.2s;
+    line-height: 1.4;
+  }
+  .tab-btn.active {
+    background: var(--gold);
+    border-color: var(--gold);
+    color: var(--navy);
+    font-weight: 500;
+  }
+  .tab-content { display: none; }
+  .tab-content.active { display: block; }
+
+  .step {
+    display: flex;
+    gap: 16px;
+    margin-bottom: 20px;
+    position: relative;
+  }
+  .step:not(:last-child)::after {
+    content: '';
+    position: absolute;
+    left: 19px;
+    top: 44px;
+    bottom: -8px;
+    width: 2px;
+    background: rgba(201,168,76,0.25);
+  }
+  .step-num {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 2px solid var(--gold);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--gold);
+    font-size: 15px;
+    font-weight: 600;
+    flex-shrink: 0;
+    background: rgba(201,168,76,0.08);
+  }
+  .step-body { flex: 1; }
+  .step-title {
+    color: var(--gold-light);
+    font-weight: 500;
+    font-size: 14px;
+    margin-bottom: 6px;
+    font-family: 'Noto Serif JP', serif;
+  }
+  .step-text {
+    color: rgba(255,255,255,0.7);
+    font-size: 13px;
+    line-height: 1.7;
+  }
+  .step-text a {
+    color: var(--gold-light);
+    text-decoration: none;
+    border-bottom: 1px solid rgba(201,168,76,0.4);
+  }
+  .tag {
+    display: inline-block;
+    background: rgba(201,168,76,0.2);
+    border: 1px solid rgba(201,168,76,0.4);
+    color: var(--gold-light);
+    border-radius: 4px;
+    padding: 1px 8px;
+    font-size: 11px;
+    margin-top: 6px;
+  }
+  .note-box {
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(201,168,76,0.2);
+    border-radius: 10px;
+    padding: 14px 16px;
+    color: rgba(255,255,255,0.65);
+    font-size: 13px;
+    line-height: 1.7;
+  }
+
+  /* ── FAQ ── */
+  .faq-list { display: grid; gap: 10px; }
+  .faq-item {
+    background: #fff;
+    border-radius: 14px;
+    border: 1px solid rgba(0,0,0,0.06);
+    overflow: hidden;
+    box-shadow: 0 2px 12px rgba(26,35,64,0.07);
+    transition: box-shadow 0.2s;
+  }
+  .faq-item.open { box-shadow: 0 6px 24px rgba(26,35,64,0.13); }
+  .faq-q {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 18px 18px;
+    cursor: pointer;
+    user-select: none;
+  }
+  .faq-q-mark {
+    width: 28px;
+    height: 28px;
+    background: var(--navy);
+    color: var(--gold);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    font-weight: 700;
+    flex-shrink: 0;
+    margin-top: 1px;
+  }
+  .faq-q-text {
+    flex: 1;
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--navy);
+    line-height: 1.5;
+  }
+  .faq-arrow {
+    color: var(--gold);
+    font-size: 18px;
+    transition: transform 0.3s;
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+  .faq-item.open .faq-arrow { transform: rotate(180deg); }
+  .faq-a {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease;
+  }
+  .faq-a-inner {
+    padding: 0 18px 18px 58px;
+    font-size: 13px;
+    color: var(--text-light);
+    line-height: 1.8;
+    border-top: 1px solid rgba(0,0,0,0.05);
+    padding-top: 14px;
+    margin-top: 0;
+  }
+  .faq-item.open .faq-a { max-height: 400px; }
+  .faq-user-badge {
+    display: inline-block;
+    background: rgba(201,168,76,0.12);
+    border: 1px solid var(--border);
+    color: var(--gold);
+    border-radius: 4px;
+    padding: 1px 7px;
+    font-size: 10px;
+    margin-left: 6px;
+    vertical-align: middle;
+  }
+
+  /* ── ADD FAQ ── */
+  .add-faq-section {
+    background: linear-gradient(135deg, #f5f0e8 0%, #ede8dc 100%);
+    border-top: 1px solid var(--border);
+  }
+  .add-faq-section section { padding-top: 40px; padding-bottom: 40px; }
+  .form-group { margin-bottom: 14px; }
+  .form-group label {
+    display: block;
+    font-size: 12px;
+    color: var(--text-light);
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    margin-bottom: 7px;
+  }
+  .form-group input,
+  .form-group textarea {
+    width: 100%;
+    padding: 14px 16px;
+    border: 1px solid rgba(0,0,0,0.1);
+    border-radius: 12px;
+    background: #fff;
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 14px;
+    color: var(--text);
+    outline: none;
+    transition: border-color 0.2s;
+    resize: vertical;
+  }
+  .form-group input:focus,
+  .form-group textarea:focus { border-color: var(--gold); box-shadow: 0 0 0 3px rgba(201,168,76,0.12); }
+  .btn-primary {
+    width: 100%;
+    padding: 16px;
+    background: linear-gradient(135deg, var(--navy) 0%, #2d3f6e 100%);
+    color: var(--gold-light);
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    letter-spacing: 2px;
+    transition: opacity 0.2s, transform 0.1s;
+  }
+  .btn-primary:active { transform: scale(0.98); opacity: 0.9; }
+  .success-msg {
+    display: none;
+    background: rgba(201,168,76,0.12);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 14px 16px;
+    text-align: center;
+    color: var(--navy);
+    font-size: 13px;
+    margin-top: 12px;
+  }
+
+  /* ── FOOTER ── */
+  footer {
+    background: var(--navy);
+    text-align: center;
+    padding: 36px 20px;
+    color: rgba(255,255,255,0.35);
+    font-size: 12px;
+    letter-spacing: 1px;
+  }
+  footer .gold { color: var(--gold); margin-bottom: 8px; font-size: 14px; }
+
+  /* ── DIVIDER ── */
+  .wave-divider { display: block; width: 100%; overflow: hidden; line-height: 0; }
+
+  /* ── ANIMATIONS ── */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  .hero > * { animation: fadeUp 0.7s ease both; }
+  .hero-ornament { animation-delay: 0.1s; }
+  .hero-sub { animation-delay: 0.2s; }
+  .hero-title { animation-delay: 0.3s; }
+  .hero-year { animation-delay: 0.35s; }
+  .hero-badges { animation-delay: 0.45s; }
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-ornament">
+    <span></span>
+    <i>✦ ✦ ✦</i>
+    <span></span>
+  </div>
+  <div class="hero-sub">五日市高校 24期</div>
+  <div class="hero-title">五高同窓会</div>
+  <div class="hero-year">2026</div>
+  <div class="hero-badges">
+    <div class="badge"><span class="dot">📅</span> 11月14日（土）</div>
+    <div class="badge"><span class="dot">🕔</span> 17:00〜20:00</div>
+    <div class="badge"><span class="dot">📍</span> ホテル広島サンプラザ</div>
+    <div class="badge"><span class="dot">💰</span> 会費 ¥7,000</div>
+  </div>
+</div>
+
+<!-- BASIC INFO -->
+<section>
+  <div class="section-label"><span>BASIC INFO</span></div>
+  <h2>開催概要</h2>
+  <div class="info-grid">
+    <div class="info-card">
+      <div class="info-icon">📅</div>
+      <div>
+        <div class="info-label">日時</div>
+        <div class="info-value">2026年11月14日（土）
+          <small>17:00〜20:00（3時間）</small>
+        </div>
+      </div>
+    </div>
+    <div class="info-card">
+      <div class="info-icon">🏨</div>
+      <div>
+        <div class="info-label">会場</div>
+        <div class="info-value">ホテル広島サンプラザ
+          <small>4期・14期・24期・34期 合同開催</small>
+        </div>
+      </div>
+    </div>
+    <div class="info-card">
+      <div class="info-icon">💴</div>
+      <div>
+        <div class="info-label">参加費</div>
+        <div class="info-value">7,000円
+          <small>二次会（同会場）別途 2,500円（未確定）</small>
+        </div>
+      </div>
+    </div>
+    <div class="info-card">
+      <div class="info-icon">🎓</div>
+      <div>
+        <div class="info-label">対象</div>
+        <div class="info-value">24期
+          <small>2000年（平成12年）卒業</small>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FLOW -->
+<div class="flow-divider">
+  <div class="section-label"><span>HOW TO JOIN</span></div>
+  <h2 style="color:#fff; margin-bottom:24px;">参加手順</h2>
+
+  <div class="tabs">
+    <button class="tab-btn active" onclick="switchTab('attend')">参加予定の方</button>
+    <button class="tab-btn" onclick="switchTab('undecided')">迷っている方</button>
+    <button class="tab-btn" onclick="switchTab('absent')">参加できない方</button>
+  </div>
+
+  <div id="tab-attend" class="tab-content active">
+    <div class="step">
+      <div class="step-num">①</div>
+      <div class="step-body">
+        <div class="step-title">住所変更（6月末まで）</div>
+        <div class="step-text">
+          <a href="http://itsuko-aa.jp/" target="_blank">http://itsuko-aa.jp/</a> にアクセス、または「五日市高校同窓会」で検索。作業時間は約5分です。<br><br>
+          苗字が変わった方は以下を必ず入力してください：
+          <br>・卒業時のお名前（漢字）
+          <br>・卒業時のお名前（かな）
+        </div>
+        <div class="tag">⏰ 期限：6月末</div>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">②</div>
+      <div class="step-body">
+        <div class="step-title">入金（8月〜）</div>
+        <div class="step-text">
+          ①で登録した住所に案内状が届きます。同封の振込用紙から7,000円をお振り込みください。
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="tab-undecided" class="tab-content">
+    <div class="note-box">
+      まずは <strong style="color:var(--gold-light)">「①住所変更」だけ</strong> 済ませておきましょう。参加の意思は後から決めて大丈夫です。正しい住所に案内状を送るためにも、住所登録だけは早めにお願いします。
+    </div>
+  </div>
+
+  <div id="tab-absent" class="tab-content">
+    <div class="note-box">
+      特に手続きは不要です。卒業時の住所に案内状が届きますが、そのまま破棄していただいて構いません。<br><br>
+      同窓会からの郵便物を正しい住所で受け取りたい方は、「住所変更」の登録だけお願いします。<br><br>
+      グループLINEは引き続きご利用いただけます。まだ連絡が取れていない方の情報などをシェアすることもあります。
+    </div>
+  </div>
+</div>
+
+<!-- FAQ -->
+<section>
+  <div class="section-label"><span>FAQ</span></div>
+  <h2>よくある質問</h2>
+  <div class="faq-list" id="faqList">
+
+    <div class="faq-item" onclick="toggleFaq(this)">
+      <div class="faq-q">
+        <div class="faq-q-mark">Q</div>
+        <div class="faq-q-text">同窓会の形式はどのような感じですか？</div>
+        <div class="faq-arrow">▾</div>
+      </div>
+      <div class="faq-a">
+        <div class="faq-a-inner">クラスごとにテーブルが用意されるのか、立食なのかは現在未決定です。過去事例では、テーブル形式であっても会後半は自由に会場内を行き来していたそうです。</div>
+      </div>
+    </div>
+
+    <div class="faq-item" onclick="toggleFaq(this)">
+      <div class="faq-q">
+        <div class="faq-q-mark">Q</div>
+        <div class="faq-q-text">当日何かイベントはありますか？</div>
+        <div class="faq-arrow">▾</div>
+      </div>
+      <div class="faq-a">
+        <div class="faq-a-inner">5月17日時点では未定です。決まり次第グループLINEでお知らせします。</div>
+      </div>
+    </div>
+
+    <div class="faq-item" onclick="toggleFaq(this)">
+      <div class="faq-q">
+        <div class="faq-q-mark">Q</div>
+        <div class="faq-q-text">24期（2000年卒）だけの同窓会ですか？</div>
+        <div class="faq-arrow">▾</div>
+      </div>
+      <div class="faq-a">
+        <div class="faq-a-inner">いいえ。4期・14期・24期・34期の合同同窓会です。ただし会場は各期ごとに分かれているため、他の期の方と会話することは基本的にありません。</div>
+      </div>
+    </div>
+
+    <div class="faq-item" onclick="toggleFaq(this)">
+      <div class="faq-q">
+        <div class="faq-q-mark">Q</div>
+        <div class="faq-q-text">先生は参加されますか？</div>
+        <div class="faq-arrow">▾</div>
+      </div>
+      <div class="faq-a">
+        <div class="faq-a-inner">寺岡先生の参加が予定されています。その他の先生の参加情報も入手でき次第共有します。</div>
+      </div>
+    </div>
+
+    <div class="faq-item" onclick="toggleFaq(this)">
+      <div class="faq-q">
+        <div class="faq-q-mark">Q</div>
+        <div class="faq-q-text">二次会はありますか？</div>
+        <div class="faq-arrow">▾</div>
+      </div>
+      <div class="faq-a">
+        <div class="faq-a-inner">2026年5月時点では未確定です。同じ会場で二次会をする場合は別途2,500円かかるそうです。</div>
+      </div>
+    </div>
+
+    <div class="faq-item" onclick="toggleFaq(this)">
+      <div class="faq-q">
+        <div class="faq-q-mark">Q</div>
+        <div class="faq-q-text">住所変更の登録をしたくない場合は？</div>
+        <div class="faq-arrow">▾</div>
+      </div>
+      <div class="faq-a">
+        <div class="faq-a-inner">同窓会事務局からの案内状発送のためにも、できるだけ住所登録をお願いします。どうしても登録したくない方は個別にご相談ください。</div>
+      </div>
+    </div>
+
+    <div class="faq-item" onclick="toggleFaq(this)">
+      <div class="faq-q">
+        <div class="faq-q-mark">Q</div>
+        <div class="faq-q-text">県外から参加します。1泊した方がいいですか？</div>
+        <div class="faq-arrow">▾</div>
+      </div>
+      <div class="faq-a">
+        <div class="faq-a-inner">終了が20時なので、ゆっくり楽しみたい方は1泊をおすすめします。ただし広島市内のホテルは高いため、「実家」「大竹駅」「岩国駅」周辺がおすすめです。</div>
+      </div>
+    </div>
+
+    <div class="faq-item" onclick="toggleFaq(this)">
+      <div class="faq-q">
+        <div class="faq-q-mark">Q</div>
+        <div class="faq-q-text">服装について教えてください。</div>
+        <div class="faq-arrow">▾</div>
+      </div>
+      <div class="faq-a">
+        <div class="faq-a-inner">ドレスコードは特にありません。お気軽な服装でお越しください。</div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ADD FAQ -->
+<div class="add-faq-section">
+  <section>
+    <div class="section-label"><span>ASK US</span></div>
+    <h2>質問を追加する</h2>
+    <p style="font-size:13px; color:var(--text-light); margin-bottom:20px; line-height:1.7;">気になることがあれば、下のフォームから投稿してください。確認後、FAQに追加します。</p>
+    <div class="form-group">
+      <label>質問内容</label>
+      <textarea id="faqQuestion" rows="3" placeholder="例：会場の駐車場はありますか？"></textarea>
+    </div>
+    <div class="form-group">
+      <label>回答（わかる方は入力してください）</label>
+      <textarea id="faqAnswer" rows="3" placeholder="任意・空欄でも送れます"></textarea>
+    </div>
+    <div class="form-group">
+      <label>ニックネーム（任意）</label>
+      <input type="text" id="faqName" placeholder="例：山田クラスの田中">
+    </div>
+    <button class="btn-primary" onclick="submitFaq()">質問を送信する</button>
+    <div class="success-msg" id="successMsg">✅ 送信しました！確認後FAQに追加します。ありがとうございます。</div>
+
+    <!-- Pending list (shown same session) -->
+    <div id="pendingFaqs" style="margin-top:20px;"></div>
+  </section>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="gold">五高同窓会 2026</div>
+  五日市高校 24期（2000年卒）<br>
+  ホテル広島サンプラザ ／ 2026.11.14
+</footer>
+
+<script>
+// Tab switching
+function switchTab(name) {
+  document.querySelectorAll('.tab-btn').forEach((b,i) => {
+    b.classList.toggle('active', ['attend','undecided','absent'][i] === name);
+  });
+  document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+  document.getElementById('tab-' + name).classList.add('active');
+}
+
+// FAQ accordion
+function toggleFaq(el) {
+  const isOpen = el.classList.contains('open');
+  document.querySelectorAll('.faq-item.open').forEach(i => i.classList.remove('open'));
+  if (!isOpen) el.classList.add('open');
+}
+
+// Submit FAQ
+function submitFaq() {
+  const q = document.getElementById('faqQuestion').value.trim();
+  const a = document.getElementById('faqAnswer').value.trim();
+  const n = document.getElementById('faqName').value.trim();
+  if (!q) { alert('質問内容を入力してください。'); return; }
+
+  // Save to localStorage
+  const faqs = JSON.parse(localStorage.getItem('pending_faqs') || '[]');
+  faqs.push({ q, a, n, ts: Date.now() });
+  localStorage.setItem('pending_faqs', JSON.stringify(faqs));
+
+  // Add to page immediately if answer provided
+  if (a) {
+    addFaqToList(q, a, n, true);
+  }
+
+  document.getElementById('faqQuestion').value = '';
+  document.getElementById('faqAnswer').value = '';
+  document.getElementById('faqName').value = '';
+  document.getElementById('successMsg').style.display = 'block';
+  setTimeout(() => document.getElementById('successMsg').style.display = 'none', 4000);
+  renderPending();
+}
+
+function addFaqToList(q, a, n, animate) {
+  const list = document.getElementById('faqList');
+  const item = document.createElement('div');
+  item.className = 'faq-item';
+  if (animate) item.style.animation = 'fadeUp 0.5s ease both';
+  item.innerHTML = `
+    <div class="faq-q" onclick="toggleFaq(this.parentElement)">
+      <div class="faq-q-mark">Q</div>
+      <div class="faq-q-text">${escHtml(q)}${n ? '<span class="faq-user-badge">'+escHtml(n)+'</span>' : ''}</div>
+      <div class="faq-arrow">▾</div>
+    </div>
+    <div class="faq-a">
+      <div class="faq-a-inner">${escHtml(a)}</div>
+    </div>
+  `;
+  list.appendChild(item);
+}
+
+function escHtml(s) {
+  return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+}
+
+function renderPending() {
+  const faqs = JSON.parse(localStorage.getItem('pending_faqs') || '[]');
+  const el = document.getElementById('pendingFaqs');
+  if (!faqs.length) { el.innerHTML = ''; return; }
+  el.innerHTML = `<p style="font-size:12px;color:var(--text-light);margin-bottom:10px;letter-spacing:1px;">▸ このセッションで送信された質問</p>` +
+    faqs.map(f => `<div style="background:#fff;border-radius:10px;padding:12px 14px;margin-bottom:8px;font-size:13px;border:1px solid rgba(0,0,0,0.06);">
+      <strong style="color:var(--navy);">Q: ${escHtml(f.q)}</strong>
+      ${f.a ? '<br><span style="color:var(--text-light);">A: '+escHtml(f.a)+'</span>' : '<br><em style="color:#bbb;">回答待ち</em>'}
+    </div>`).join('');
+}
+
+// On load: restore session FAQs
+window.onload = () => renderPending();
+</script>
+</body>
+</html>
