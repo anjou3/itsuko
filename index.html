@@ -2,242 +2,244 @@
 <html lang="ja">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
-<title>五高同窓会 2026</title>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300;400;600;700&family=Noto+Sans+JP:wght@300;400;500&family=Playfair+Display:ital,wght@0,700;1,400&display=swap" rel="stylesheet">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>五高同窓会 2026 ｜ 24期</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&family=Noto+Serif+JP:wght@400;600;700&display=swap" rel="stylesheet">
 <style>
   :root {
-    --navy: #1a2340;
-    --gold: #c9a84c;
-    --gold-light: #e8c96d;
-    --cream: #faf7f0;
-    --warm-white: #fff9f0;
-    --text: #2d2d2d;
-    --text-light: #666;
-    --border: rgba(201,168,76,0.3);
-    --shadow: 0 8px 40px rgba(26,35,64,0.12);
+    --bg: #fffdf8;
+    --card: #ffffff;
+    --rust: #c0622a;
+    --rust-light: #e8845a;
+    --rust-pale: #fdf0ea;
+    --amber: #d4902a;
+    --amber-pale: #fef6e4;
+    --green: #4a7c59;
+    --green-pale: #edf5f0;
+    --text: #2e2a25;
+    --text-mid: #5a534a;
+    --text-light: #8a8078;
+    --border: #e8e0d4;
+    --shadow-sm: 0 2px 12px rgba(80,50,20,0.08);
+    --shadow: 0 6px 32px rgba(80,50,20,0.12);
+    --r: 18px;
   }
 
   * { box-sizing: border-box; margin: 0; padding: 0; }
 
   body {
-    background: var(--cream);
+    background: var(--bg);
     color: var(--text);
     font-family: 'Noto Sans JP', sans-serif;
-    font-weight: 300;
+    font-size: 17px;
     line-height: 1.8;
-    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
   }
 
-  /* ── HERO ── */
+  /* ─── HERO ─── */
   .hero {
-    background: var(--navy);
+    background: linear-gradient(160deg, #3d2010 0%, #6b3318 50%, #8b4523 100%);
+    padding: 52px 24px 60px;
+    text-align: center;
     position: relative;
     overflow: hidden;
-    padding: 60px 24px 56px;
-    text-align: center;
   }
-  .hero::before {
+  .hero::after {
     content: '';
     position: absolute;
-    inset: 0;
-    background: radial-gradient(ellipse 80% 60% at 50% 100%, rgba(201,168,76,0.18) 0%, transparent 70%);
+    bottom: -1px; left: 0; right: 0;
+    height: 36px;
+    background: var(--bg);
+    clip-path: ellipse(55% 100% at 50% 100%);
   }
-  .hero-ornament {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 12px;
-    margin-bottom: 20px;
-  }
-  .hero-ornament span {
+  .hero-kamon {
+    font-size: 42px;
+    margin-bottom: 16px;
     display: block;
-    height: 1px;
-    width: 48px;
-    background: var(--gold);
-    opacity: 0.6;
+    filter: drop-shadow(0 2px 8px rgba(0,0,0,0.3));
   }
-  .hero-ornament i {
-    color: var(--gold);
-    font-style: normal;
-    font-size: 18px;
-    letter-spacing: 4px;
-  }
-  .hero-sub {
-    font-family: 'Noto Serif JP', serif;
-    color: var(--gold);
-    font-size: 13px;
-    letter-spacing: 6px;
-    text-transform: uppercase;
-    margin-bottom: 14px;
-    opacity: 0.9;
+  .hero-eyebrow {
+    color: rgba(255,220,160,0.85);
+    font-size: 14px;
+    letter-spacing: 5px;
+    margin-bottom: 12px;
+    font-weight: 400;
   }
   .hero-title {
     font-family: 'Noto Serif JP', serif;
-    color: #fff;
-    font-size: clamp(28px, 8vw, 44px);
-    font-weight: 600;
-    line-height: 1.3;
-    margin-bottom: 8px;
-    position: relative;
-  }
-  .hero-title em {
-    font-style: italic;
-    font-family: 'Playfair Display', serif;
-    color: var(--gold-light);
-    font-size: 0.9em;
-  }
-  .hero-year {
-    font-family: 'Playfair Display', serif;
-    color: rgba(255,255,255,0.25);
-    font-size: clamp(60px, 18vw, 110px);
+    font-size: clamp(30px, 9vw, 52px);
     font-weight: 700;
-    line-height: 1;
-    letter-spacing: -2px;
-    position: relative;
-    margin: 4px 0 0;
+    color: #fff;
+    line-height: 1.2;
+    margin-bottom: 6px;
   }
-  .hero-badges {
+  .hero-title span {
+    color: #ffcf80;
+  }
+  .hero-subtitle {
+    color: rgba(255,220,160,0.7);
+    font-size: 15px;
+    margin-bottom: 32px;
+    letter-spacing: 2px;
+  }
+  .hero-chips {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     gap: 10px;
-    margin-top: 28px;
-    position: relative;
+    margin-bottom: 8px;
   }
-  .badge {
-    background: rgba(255,255,255,0.08);
-    border: 1px solid rgba(201,168,76,0.4);
+  .chip {
+    background: rgba(255,255,255,0.12);
+    border: 1px solid rgba(255,220,160,0.35);
     border-radius: 40px;
-    padding: 8px 18px;
-    color: rgba(255,255,255,0.9);
-    font-size: 13px;
+    padding: 9px 20px;
+    color: #fff;
+    font-size: 15px;
     display: flex;
     align-items: center;
-    gap: 7px;
-    letter-spacing: 0.5px;
+    gap: 8px;
+    backdrop-filter: blur(4px);
   }
-  .badge .dot { color: var(--gold); font-size: 18px; line-height: 1; }
+  .chip-em { color: #ffcf80; font-weight: 500; }
 
-  /* ── SECTION ── */
-  section {
-    padding: 52px 20px;
-    max-width: 680px;
+  /* ─── SECTIONS ─── */
+  .wrap {
+    max-width: 700px;
     margin: 0 auto;
+    padding: 0 18px;
   }
-  .section-label {
+
+  .sec {
+    padding: 48px 0 8px;
+  }
+
+  .sec-head {
     display: flex;
     align-items: center;
-    gap: 12px;
-    margin-bottom: 28px;
+    gap: 14px;
+    margin-bottom: 24px;
   }
-  .section-label::before, .section-label::after {
-    content: '';
-    flex: 1;
-    height: 1px;
-    background: var(--border);
+  .sec-icon {
+    width: 48px; height: 48px;
+    border-radius: 14px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 24px;
+    flex-shrink: 0;
   }
-  .section-label span {
-    font-size: 11px;
-    letter-spacing: 5px;
-    color: var(--gold);
-    font-weight: 500;
-    white-space: nowrap;
+  .sec-icon.rust { background: var(--rust-pale); }
+  .sec-icon.amber { background: var(--amber-pale); }
+  .sec-icon.green { background: var(--green-pale); }
+  .sec-label {
+    font-size: 13px;
+    color: var(--text-light);
+    letter-spacing: 2px;
     text-transform: uppercase;
+    margin-bottom: 2px;
   }
-  h2 {
+  .sec-title {
     font-family: 'Noto Serif JP', serif;
     font-size: 22px;
-    font-weight: 600;
-    margin-bottom: 20px;
-    color: var(--navy);
+    font-weight: 700;
+    color: var(--text);
+    line-height: 1.3;
   }
 
-  /* ── INFO CARD ── */
+  /* ─── INFO CARDS ─── */
   .info-grid {
     display: grid;
     gap: 12px;
   }
   .info-card {
-    background: #fff;
-    border-radius: 16px;
+    background: var(--card);
+    border-radius: var(--r);
+    border: 1px solid var(--border);
+    box-shadow: var(--shadow-sm);
     padding: 20px 22px;
-    border: 1px solid rgba(0,0,0,0.06);
-    box-shadow: var(--shadow);
     display: flex;
     align-items: flex-start;
     gap: 16px;
   }
-  .info-icon {
-    width: 44px;
-    height: 44px;
-    background: linear-gradient(135deg, var(--navy) 0%, #2d3f6e 100%);
-    border-radius: 12px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 20px;
+  .ic-icon {
+    font-size: 28px;
+    width: 50px; height: 50px;
+    background: var(--rust-pale);
+    border-radius: 14px;
+    display: flex; align-items: center; justify-content: center;
     flex-shrink: 0;
   }
-  .info-label {
-    font-size: 11px;
+  .ic-label {
+    font-size: 13px;
     color: var(--text-light);
-    letter-spacing: 2px;
-    text-transform: uppercase;
     margin-bottom: 4px;
+    letter-spacing: 1px;
   }
-  .info-value {
+  .ic-value {
     font-family: 'Noto Serif JP', serif;
-    font-size: 16px;
-    color: var(--navy);
+    font-size: 18px;
     font-weight: 600;
-    line-height: 1.4;
+    color: var(--text);
+    line-height: 1.45;
   }
-  .info-value small {
-    display: block;
+  .ic-note {
     font-family: 'Noto Sans JP', sans-serif;
+    font-size: 14px;
+    color: var(--text-mid);
     font-weight: 300;
-    font-size: 12px;
-    color: var(--text-light);
-    margin-top: 2px;
+    margin-top: 3px;
+    line-height: 1.6;
   }
 
-  /* ── FLOW ── */
-  .flow-divider {
-    background: linear-gradient(135deg, var(--navy) 0%, #2d3f6e 100%);
-    margin: 0;
-    padding: 52px 20px;
+  /* ─── NOTICE BANNER ─── */
+  .notice {
+    background: var(--amber-pale);
+    border: 1px solid #f0d090;
+    border-radius: var(--r);
+    padding: 18px 20px;
+    display: flex;
+    gap: 14px;
+    align-items: flex-start;
+    margin-top: 16px;
   }
-  .flow-divider > * { max-width: 680px; margin-inline: auto; }
-  .flow-divider h2 { color: #fff; }
-  .flow-divider .section-label::before,
-  .flow-divider .section-label::after { background: rgba(201,168,76,0.3); }
-  .flow-divider .section-label span { color: var(--gold-light); }
+  .notice-icon { font-size: 22px; flex-shrink: 0; margin-top: 2px; }
+  .notice-text { font-size: 15px; color: #6b4a10; line-height: 1.75; }
+  .notice-text strong { font-weight: 700; }
+
+  /* ─── HOW TO ─── */
+  .how-bg {
+    background: linear-gradient(160deg, #3d2010 0%, #6b3318 100%);
+    margin: 40px 0 0;
+    padding: 48px 18px 56px;
+  }
+  .how-bg .sec-title { color: #fff; }
+  .how-bg .sec-label { color: rgba(255,210,140,0.7); }
 
   .tabs {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 6px;
+    display: flex;
+    gap: 8px;
     margin-bottom: 24px;
+    flex-wrap: wrap;
   }
   .tab-btn {
-    padding: 10px 6px;
-    border-radius: 10px;
-    border: 1px solid rgba(201,168,76,0.3);
-    background: rgba(255,255,255,0.06);
-    color: rgba(255,255,255,0.6);
+    flex: 1;
+    min-width: 80px;
+    padding: 12px 8px;
+    border-radius: 12px;
+    border: 1px solid rgba(255,210,140,0.3);
+    background: rgba(255,255,255,0.07);
+    color: rgba(255,255,255,0.65);
     font-family: 'Noto Sans JP', sans-serif;
-    font-size: 12px;
+    font-size: 14px;
     cursor: pointer;
     text-align: center;
     transition: all 0.2s;
     line-height: 1.4;
   }
   .tab-btn.active {
-    background: var(--gold);
-    border-color: var(--gold);
-    color: var(--navy);
-    font-weight: 500;
+    background: #ffcf80;
+    border-color: #ffcf80;
+    color: #3d2010;
+    font-weight: 700;
   }
   .tab-content { display: none; }
   .tab-content.active { display: block; }
@@ -245,116 +247,154 @@
   .step {
     display: flex;
     gap: 16px;
-    margin-bottom: 20px;
+    margin-bottom: 24px;
     position: relative;
   }
   .step:not(:last-child)::after {
     content: '';
     position: absolute;
-    left: 19px;
-    top: 44px;
-    bottom: -8px;
+    left: 21px; top: 48px; bottom: -10px;
     width: 2px;
-    background: rgba(201,168,76,0.25);
+    background: rgba(255,210,140,0.2);
   }
   .step-num {
-    width: 40px;
-    height: 40px;
+    width: 44px; height: 44px;
     border-radius: 50%;
-    border: 2px solid var(--gold);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: var(--gold);
-    font-size: 15px;
-    font-weight: 600;
+    border: 2px solid #ffcf80;
+    background: rgba(255,207,128,0.12);
+    display: flex; align-items: center; justify-content: center;
+    color: #ffcf80;
+    font-size: 18px;
+    font-weight: 700;
     flex-shrink: 0;
-    background: rgba(201,168,76,0.08);
   }
   .step-body { flex: 1; }
   .step-title {
-    color: var(--gold-light);
-    font-weight: 500;
-    font-size: 14px;
-    margin-bottom: 6px;
+    color: #ffcf80;
+    font-size: 17px;
+    font-weight: 700;
+    margin-bottom: 7px;
     font-family: 'Noto Serif JP', serif;
   }
   .step-text {
-    color: rgba(255,255,255,0.7);
-    font-size: 13px;
-    line-height: 1.7;
+    color: rgba(255,255,255,0.78);
+    font-size: 15px;
+    line-height: 1.8;
   }
   .step-text a {
-    color: var(--gold-light);
+    color: #ffcf80;
     text-decoration: none;
-    border-bottom: 1px solid rgba(201,168,76,0.4);
+    border-bottom: 1px solid rgba(255,207,128,0.4);
+    word-break: break-all;
   }
-  .tag {
+  .step-tag {
     display: inline-block;
-    background: rgba(201,168,76,0.2);
-    border: 1px solid rgba(201,168,76,0.4);
-    color: var(--gold-light);
-    border-radius: 4px;
-    padding: 1px 8px;
-    font-size: 11px;
-    margin-top: 6px;
-  }
-  .note-box {
-    background: rgba(255,255,255,0.06);
-    border: 1px solid rgba(201,168,76,0.2);
-    border-radius: 10px;
-    padding: 14px 16px;
-    color: rgba(255,255,255,0.65);
+    background: rgba(255,207,128,0.18);
+    border: 1px solid rgba(255,207,128,0.35);
+    color: #ffcf80;
+    border-radius: 6px;
+    padding: 3px 12px;
     font-size: 13px;
-    line-height: 1.7;
+    margin-top: 8px;
+  }
+  .how-note {
+    background: rgba(255,255,255,0.07);
+    border: 1px solid rgba(255,210,140,0.2);
+    border-radius: 14px;
+    padding: 18px 20px;
+    color: rgba(255,255,255,0.72);
+    font-size: 15px;
+    line-height: 1.85;
+  }
+  .how-note strong { color: #ffcf80; }
+
+  /* ─── MEMBERS ─── */
+  .member-grid {
+    display: grid;
+    gap: 12px;
+  }
+  .member-card {
+    background: var(--card);
+    border-radius: var(--r);
+    border: 1px solid var(--border);
+    box-shadow: var(--shadow-sm);
+    padding: 20px 22px;
+  }
+  .member-name {
+    font-family: 'Noto Serif JP', serif;
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--text);
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+  .member-badge {
+    display: inline-block;
+    padding: 2px 10px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-family: 'Noto Sans JP', sans-serif;
+    font-weight: 500;
+  }
+  .badge-kanji { background: var(--rust-pale); color: var(--rust); }
+  .badge-attend { background: var(--green-pale); color: var(--green); }
+  .badge-maybe { background: var(--amber-pale); color: var(--amber); }
+  .badge-skip { background: #f0f0f0; color: #888; }
+  .member-text {
+    font-size: 15px;
+    color: var(--text-mid);
+    line-height: 1.8;
   }
 
-  /* ── FAQ ── */
+  /* ─── FAQ ─── */
   .faq-list { display: grid; gap: 10px; }
   .faq-item {
-    background: #fff;
-    border-radius: 14px;
-    border: 1px solid rgba(0,0,0,0.06);
+    background: var(--card);
+    border-radius: var(--r);
+    border: 1px solid var(--border);
+    box-shadow: var(--shadow-sm);
     overflow: hidden;
-    box-shadow: 0 2px 12px rgba(26,35,64,0.07);
     transition: box-shadow 0.2s;
   }
-  .faq-item.open { box-shadow: 0 6px 24px rgba(26,35,64,0.13); }
+  .faq-item.open {
+    border-color: #e0cbb8;
+    box-shadow: var(--shadow);
+  }
   .faq-q {
     display: flex;
     align-items: flex-start;
-    gap: 12px;
-    padding: 18px 18px;
+    gap: 14px;
+    padding: 20px 20px;
     cursor: pointer;
     user-select: none;
   }
   .faq-q-mark {
-    width: 28px;
-    height: 28px;
-    background: var(--navy);
-    color: var(--gold);
-    border-radius: 8px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 14px;
+    width: 32px; height: 32px;
+    background: var(--rust);
+    color: #fff;
+    border-radius: 10px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 16px;
     font-weight: 700;
     flex-shrink: 0;
-    margin-top: 1px;
+    margin-top: 2px;
   }
   .faq-q-text {
     flex: 1;
-    font-size: 14px;
+    font-size: 17px;
     font-weight: 500;
-    color: var(--navy);
+    color: var(--text);
     line-height: 1.5;
   }
   .faq-arrow {
-    color: var(--gold);
-    font-size: 18px;
+    color: var(--rust);
+    font-size: 20px;
     transition: transform 0.3s;
     flex-shrink: 0;
-    margin-top: 2px;
+    margin-top: 4px;
   }
   .faq-item.open .faq-arrow { transform: rotate(180deg); }
   .faq-a {
@@ -362,435 +402,397 @@
     overflow: hidden;
     transition: max-height 0.4s ease;
   }
+  .faq-item.open .faq-a { max-height: 500px; }
   .faq-a-inner {
-    padding: 0 18px 18px 58px;
-    font-size: 13px;
-    color: var(--text-light);
-    line-height: 1.8;
-    border-top: 1px solid rgba(0,0,0,0.05);
-    padding-top: 14px;
-    margin-top: 0;
-  }
-  .faq-item.open .faq-a { max-height: 400px; }
-  .faq-user-badge {
-    display: inline-block;
-    background: rgba(201,168,76,0.12);
-    border: 1px solid var(--border);
-    color: var(--gold);
-    border-radius: 4px;
-    padding: 1px 7px;
-    font-size: 10px;
-    margin-left: 6px;
-    vertical-align: middle;
-  }
-
-  /* ── ADD FAQ ── */
-  .add-faq-section {
-    background: linear-gradient(135deg, #f5f0e8 0%, #ede8dc 100%);
+    padding: 0 20px 22px 66px;
+    font-size: 16px;
+    color: var(--text-mid);
+    line-height: 1.85;
     border-top: 1px solid var(--border);
-  }
-  .add-faq-section section { padding-top: 40px; padding-bottom: 40px; }
-  .form-group { margin-bottom: 14px; }
-  .form-group label {
-    display: block;
-    font-size: 12px;
-    color: var(--text-light);
-    letter-spacing: 1.5px;
-    text-transform: uppercase;
-    margin-bottom: 7px;
-  }
-  .form-group input,
-  .form-group textarea {
-    width: 100%;
-    padding: 14px 16px;
-    border: 1px solid rgba(0,0,0,0.1);
-    border-radius: 12px;
-    background: #fff;
-    font-family: 'Noto Sans JP', sans-serif;
-    font-size: 14px;
-    color: var(--text);
-    outline: none;
-    transition: border-color 0.2s;
-    resize: vertical;
-  }
-  .form-group input:focus,
-  .form-group textarea:focus { border-color: var(--gold); box-shadow: 0 0 0 3px rgba(201,168,76,0.12); }
-  .btn-primary {
-    width: 100%;
-    padding: 16px;
-    background: linear-gradient(135deg, var(--navy) 0%, #2d3f6e 100%);
-    color: var(--gold-light);
-    font-family: 'Noto Sans JP', sans-serif;
-    font-size: 14px;
-    font-weight: 500;
-    border: none;
-    border-radius: 12px;
-    cursor: pointer;
-    letter-spacing: 2px;
-    transition: opacity 0.2s, transform 0.1s;
-  }
-  .btn-primary:active { transform: scale(0.98); opacity: 0.9; }
-  .success-msg {
-    display: none;
-    background: rgba(201,168,76,0.12);
-    border: 1px solid var(--border);
-    border-radius: 10px;
-    padding: 14px 16px;
-    text-align: center;
-    color: var(--navy);
-    font-size: 13px;
-    margin-top: 12px;
+    padding-top: 16px;
   }
 
-  /* ── FOOTER ── */
+  /* ─── FOOTER ─── */
   footer {
-    background: var(--navy);
+    background: #2e2010;
     text-align: center;
-    padding: 36px 20px;
-    color: rgba(255,255,255,0.35);
-    font-size: 12px;
-    letter-spacing: 1px;
+    padding: 44px 20px 40px;
+    margin-top: 56px;
   }
-  footer .gold { color: var(--gold); margin-bottom: 8px; font-size: 14px; }
+  .footer-title {
+    font-family: 'Noto Serif JP', serif;
+    color: #ffcf80;
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 10px;
+  }
+  .footer-sub {
+    color: rgba(255,255,255,0.45);
+    font-size: 14px;
+    line-height: 1.9;
+  }
+  .footer-link {
+    display: inline-block;
+    margin-top: 18px;
+    color: rgba(255,210,140,0.7);
+    font-size: 13px;
+    text-decoration: none;
+    border-bottom: 1px solid rgba(255,210,140,0.3);
+  }
 
-  /* ── DIVIDER ── */
-  .wave-divider { display: block; width: 100%; overflow: hidden; line-height: 0; }
+  /* ─── DIVIDER ─── */
+  .divider {
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--border), transparent);
+    margin: 44px 0 0;
+  }
 
-  /* ── ANIMATIONS ── */
+  /* ─── ANIMATIONS ─── */
   @keyframes fadeUp {
-    from { opacity: 0; transform: translateY(20px); }
+    from { opacity: 0; transform: translateY(24px); }
     to { opacity: 1; transform: translateY(0); }
   }
   .hero > * { animation: fadeUp 0.7s ease both; }
-  .hero-ornament { animation-delay: 0.1s; }
-  .hero-sub { animation-delay: 0.2s; }
-  .hero-title { animation-delay: 0.3s; }
-  .hero-year { animation-delay: 0.35s; }
-  .hero-badges { animation-delay: 0.45s; }
+  .hero-kamon    { animation-delay: 0.05s; }
+  .hero-eyebrow  { animation-delay: 0.15s; }
+  .hero-title    { animation-delay: 0.25s; }
+  .hero-subtitle { animation-delay: 0.32s; }
+  .hero-chips    { animation-delay: 0.4s; }
 </style>
 </head>
 <body>
 
-<!-- HERO -->
+<!-- ═══ HERO ═══ -->
 <div class="hero">
-  <div class="hero-ornament">
-    <span></span>
-    <i>✦ ✦ ✦</i>
-    <span></span>
-  </div>
-  <div class="hero-sub">五日市高校 24期</div>
-  <div class="hero-title">五高同窓会</div>
-  <div class="hero-year">2026</div>
-  <div class="hero-badges">
-    <div class="badge"><span class="dot">📅</span> 11月14日（土）</div>
-    <div class="badge"><span class="dot">🕔</span> 17:00〜20:00</div>
-    <div class="badge"><span class="dot">📍</span> ホテル広島サンプラザ</div>
-    <div class="badge"><span class="dot">💰</span> 会費 ¥7,000</div>
+  <span class="hero-kamon">🌸</span>
+  <div class="hero-eyebrow">五日市高校 ･ 24期</div>
+  <div class="hero-title">五高<span>同窓会</span></div>
+  <div class="hero-subtitle">2000年（平成12年）卒業</div>
+  <div class="hero-chips">
+    <div class="chip">📅 <span class="chip-em">2026年11月14日（土）</span></div>
+    <div class="chip">🕔 <span class="chip-em">17:00〜20:00</span></div>
+    <div class="chip">📍 <span class="chip-em">ホテル広島サンプラザ</span></div>
+    <div class="chip">💴 <span class="chip-em">会費 7,000円（参考金額）</span></div>
   </div>
 </div>
 
-<!-- BASIC INFO -->
-<section>
-  <div class="section-label"><span>BASIC INFO</span></div>
-  <h2>開催概要</h2>
-  <div class="info-grid">
-    <div class="info-card">
-      <div class="info-icon">📅</div>
+<!-- ═══ BASIC INFO ═══ -->
+<div class="wrap">
+  <div class="sec">
+    <div class="sec-head">
+      <div class="sec-icon rust">📋</div>
       <div>
-        <div class="info-label">日時</div>
-        <div class="info-value">2026年11月14日（土）
-          <small>17:00〜20:00（3時間）</small>
-        </div>
+        <div class="sec-label">BASIC INFO</div>
+        <div class="sec-title">開催概要</div>
       </div>
     </div>
-    <div class="info-card">
-      <div class="info-icon">🏨</div>
-      <div>
-        <div class="info-label">会場</div>
-        <div class="info-value">ホテル広島サンプラザ
-          <small>4期・14期・24期・34期 合同開催</small>
-        </div>
-      </div>
-    </div>
-    <div class="info-card">
-      <div class="info-icon">💴</div>
-      <div>
-        <div class="info-label">参加費</div>
-        <div class="info-value">7,000円
-          <small>二次会（同会場）別途 2,500円（未確定）</small>
-        </div>
-      </div>
-    </div>
-    <div class="info-card">
-      <div class="info-icon">🎓</div>
-      <div>
-        <div class="info-label">対象</div>
-        <div class="info-value">24期
-          <small>2000年（平成12年）卒業</small>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
 
-<!-- FLOW -->
-<div class="flow-divider">
-  <div class="section-label"><span>HOW TO JOIN</span></div>
-  <h2 style="color:#fff; margin-bottom:24px;">参加手順</h2>
-
-  <div class="tabs">
-    <button class="tab-btn active" onclick="switchTab('attend')">参加予定の方</button>
-    <button class="tab-btn" onclick="switchTab('undecided')">迷っている方</button>
-    <button class="tab-btn" onclick="switchTab('absent')">参加できない方</button>
-  </div>
-
-  <div id="tab-attend" class="tab-content active">
-    <div class="step">
-      <div class="step-num">①</div>
-      <div class="step-body">
-        <div class="step-title">住所変更（6月末まで）</div>
-        <div class="step-text">
-          <a href="http://itsuko-aa.jp/" target="_blank">http://itsuko-aa.jp/</a> にアクセス、または「五日市高校同窓会」で検索。作業時間は約5分です。<br><br>
-          苗字が変わった方は以下を必ず入力してください：
-          <br>・卒業時のお名前（漢字）
-          <br>・卒業時のお名前（かな）
-        </div>
-        <div class="tag">⏰ 期限：6月末</div>
-      </div>
-    </div>
-    <div class="step">
-      <div class="step-num">②</div>
-      <div class="step-body">
-        <div class="step-title">入金（8月〜）</div>
-        <div class="step-text">
-          ①で登録した住所に案内状が届きます。同封の振込用紙から7,000円をお振り込みください。
+    <div class="info-grid">
+      <div class="info-card">
+        <div class="ic-icon">📅</div>
+        <div>
+          <div class="ic-label">日時</div>
+          <div class="ic-value">2026年11月14日（土）</div>
+          <div class="ic-note">17:00〜20:00（3時間）</div>
         </div>
       </div>
+      <div class="info-card">
+        <div class="ic-icon">🏨</div>
+        <div>
+          <div class="ic-label">会場</div>
+          <div class="ic-value">ホテル広島サンプラザ</div>
+          <div class="ic-note"><a href="https://www.hiroshima-sunplaza.com/" style="color:var(--rust);text-decoration:none;" target="_blank">www.hiroshima-sunplaza.com</a><br>4期・14期・24期・34期 合同開催<br>（各期ごとに会場が分かれます）</div>
+        </div>
+      </div>
+      <div class="info-card">
+        <div class="ic-icon">💴</div>
+        <div>
+          <div class="ic-label">参加費</div>
+          <div class="ic-value">7,000円（参考金額）</div>
+          <div class="ic-note">案内状同封の振込用紙に記載された金額でお支払いください<br>二次会（同会場）別途 2,500円（未確定）</div>
+        </div>
+      </div>
+      <div class="info-card">
+        <div class="ic-icon">🍽️</div>
+        <div>
+          <div class="ic-label">食事・ドリンク</div>
+          <div class="ic-value">着席スタイル・飲み放題</div>
+          <div class="ic-note">テーブルに配られる料理を各自が取るスタイルです<br>ドリンクはカウンターorスタッフへ</div>
+        </div>
+      </div>
     </div>
-  </div>
 
-  <div id="tab-undecided" class="tab-content">
-    <div class="note-box">
-      まずは <strong style="color:var(--gold-light)">「①住所変更」だけ</strong> 済ませておきましょう。参加の意思は後から決めて大丈夫です。正しい住所に案内状を送るためにも、住所登録だけは早めにお願いします。
-    </div>
-  </div>
-
-  <div id="tab-absent" class="tab-content">
-    <div class="note-box">
-      特に手続きは不要です。卒業時の住所に案内状が届きますが、そのまま破棄していただいて構いません。<br><br>
-      同窓会からの郵便物を正しい住所で受け取りたい方は、「住所変更」の登録だけお願いします。<br><br>
-      グループLINEは引き続きご利用いただけます。まだ連絡が取れていない方の情報などをシェアすることもあります。
+    <div class="notice">
+      <div class="notice-icon">👗</div>
+      <div class="notice-text"><strong>服装について：</strong>ドレスコードはありません。お気軽な服装でどうぞ！</div>
     </div>
   </div>
 </div>
 
-<!-- FAQ -->
-<section>
-  <div class="section-label"><span>FAQ</span></div>
-  <h2>よくある質問</h2>
-  <div class="faq-list" id="faqList">
-
-    <div class="faq-item" onclick="toggleFaq(this)">
-      <div class="faq-q">
-        <div class="faq-q-mark">Q</div>
-        <div class="faq-q-text">同窓会の形式はどのような感じですか？</div>
-        <div class="faq-arrow">▾</div>
-      </div>
-      <div class="faq-a">
-        <div class="faq-a-inner">クラスごとにテーブルが用意されるのか、立食なのかは現在未決定です。過去事例では、テーブル形式であっても会後半は自由に会場内を行き来していたそうです。</div>
+<!-- ═══ HOW TO ═══ -->
+<div class="how-bg">
+  <div class="wrap">
+    <div class="sec-head" style="margin-bottom:24px;">
+      <div class="sec-icon" style="background:rgba(255,207,128,0.15);font-size:26px;">📝</div>
+      <div>
+        <div class="sec-label" style="color:rgba(255,210,140,0.65);">HOW TO JOIN</div>
+        <div class="sec-title" style="color:#fff;">参加の手順</div>
       </div>
     </div>
 
-    <div class="faq-item" onclick="toggleFaq(this)">
-      <div class="faq-q">
-        <div class="faq-q-mark">Q</div>
-        <div class="faq-q-text">当日何かイベントはありますか？</div>
-        <div class="faq-arrow">▾</div>
+    <div class="tabs">
+      <button class="tab-btn active" onclick="switchTab('attend')">✅ 参加予定</button>
+      <button class="tab-btn" onclick="switchTab('undecided')">🤔 迷っている</button>
+      <button class="tab-btn" onclick="switchTab('absent')">😔 参加できない</button>
+    </div>
+
+    <!-- 参加予定 -->
+    <div id="tab-attend" class="tab-content active">
+      <div class="step">
+        <div class="step-num">①</div>
+        <div class="step-body">
+          <div class="step-title">住所変更（6月末まで）</div>
+          <div class="step-text">
+            <a href="http://itsuko-aa.jp/" target="_blank">http://itsuko-aa.jp/</a> にアクセス<br>
+            または「五日市高校同窓会」で検索<br><br>
+            作業時間：約5分<br>
+            卒業回期：<strong style="color:#ffcf80;">24期〔2000（平成12）年〕</strong><br><br>
+            苗字が変わった方は下記を必ず入力してください：<br>
+            ・卒業時のお名前（漢字）<br>
+            ・卒業時のお名前（かな）
+          </div>
+          <div class="step-tag">⏰ 期限：6月末</div>
+        </div>
       </div>
-      <div class="faq-a">
-        <div class="faq-a-inner">5月17日時点では未定です。決まり次第グループLINEでお知らせします。</div>
+      <div class="step">
+        <div class="step-num">②</div>
+        <div class="step-body">
+          <div class="step-title">入金（8月〜）</div>
+          <div class="step-text">
+            ①で登録した住所に案内状が届きます。<br>
+            同封の振込用紙に記載された金額をお振り込みください。
+          </div>
+        </div>
       </div>
     </div>
 
-    <div class="faq-item" onclick="toggleFaq(this)">
-      <div class="faq-q">
-        <div class="faq-q-mark">Q</div>
-        <div class="faq-q-text">24期（2000年卒）だけの同窓会ですか？</div>
-        <div class="faq-arrow">▾</div>
-      </div>
-      <div class="faq-a">
-        <div class="faq-a-inner">いいえ。4期・14期・24期・34期の合同同窓会です。ただし会場は各期ごとに分かれているため、他の期の方と会話することは基本的にありません。</div>
+    <!-- 迷っている -->
+    <div id="tab-undecided" class="tab-content">
+      <div class="how-note">
+        まずは <strong>「①住所変更」だけ</strong> 済ませておきましょう！<br><br>
+        参加の意思は後から決めて大丈夫です。正しい住所に案内状を届けるためにも、住所登録だけは6月末までにお願いします🙏
       </div>
     </div>
 
-    <div class="faq-item" onclick="toggleFaq(this)">
-      <div class="faq-q">
-        <div class="faq-q-mark">Q</div>
-        <div class="faq-q-text">先生は参加されますか？</div>
-        <div class="faq-arrow">▾</div>
-      </div>
-      <div class="faq-a">
-        <div class="faq-a-inner">寺岡先生の参加が予定されています。その他の先生の参加情報も入手でき次第共有します。</div>
-      </div>
-    </div>
-
-    <div class="faq-item" onclick="toggleFaq(this)">
-      <div class="faq-q">
-        <div class="faq-q-mark">Q</div>
-        <div class="faq-q-text">二次会はありますか？</div>
-        <div class="faq-arrow">▾</div>
-      </div>
-      <div class="faq-a">
-        <div class="faq-a-inner">2026年5月時点では未確定です。同じ会場で二次会をする場合は別途2,500円かかるそうです。</div>
+    <!-- 参加できない -->
+    <div id="tab-absent" class="tab-content">
+      <div class="how-note">
+        特に手続きは不要です。<br><br>
+        卒業時の住所に案内状が届きますが、そのまま破棄していただいて構いません。<br><br>
+        同窓会からの郵便物を正しい住所に届けたい方は「住所変更」だけお願いします。<br><br>
+        グループLINEはどうぞ引き続きご利用ください 😊<br>まだ連絡がついていない方の情報なども共有する予定です。
       </div>
     </div>
-
-    <div class="faq-item" onclick="toggleFaq(this)">
-      <div class="faq-q">
-        <div class="faq-q-mark">Q</div>
-        <div class="faq-q-text">住所変更の登録をしたくない場合は？</div>
-        <div class="faq-arrow">▾</div>
-      </div>
-      <div class="faq-a">
-        <div class="faq-a-inner">同窓会事務局からの案内状発送のためにも、できるだけ住所登録をお願いします。どうしても登録したくない方は個別にご相談ください。</div>
-      </div>
-    </div>
-
-    <div class="faq-item" onclick="toggleFaq(this)">
-      <div class="faq-q">
-        <div class="faq-q-mark">Q</div>
-        <div class="faq-q-text">県外から参加します。1泊した方がいいですか？</div>
-        <div class="faq-arrow">▾</div>
-      </div>
-      <div class="faq-a">
-        <div class="faq-a-inner">終了が20時なので、ゆっくり楽しみたい方は1泊をおすすめします。ただし広島市内のホテルは高いため、「実家」「大竹駅」「岩国駅」周辺がおすすめです。</div>
-      </div>
-    </div>
-
-    <div class="faq-item" onclick="toggleFaq(this)">
-      <div class="faq-q">
-        <div class="faq-q-mark">Q</div>
-        <div class="faq-q-text">服装について教えてください。</div>
-        <div class="faq-arrow">▾</div>
-      </div>
-      <div class="faq-a">
-        <div class="faq-a-inner">ドレスコードは特にありません。お気軽な服装でお越しください。</div>
-      </div>
-    </div>
-
   </div>
-</section>
-
-<!-- ADD FAQ -->
-<div class="add-faq-section">
-  <section>
-    <div class="section-label"><span>ASK US</span></div>
-    <h2>質問を追加する</h2>
-    <p style="font-size:13px; color:var(--text-light); margin-bottom:20px; line-height:1.7;">気になることがあれば、下のフォームから投稿してください。確認後、FAQに追加します。</p>
-    <div class="form-group">
-      <label>質問内容</label>
-      <textarea id="faqQuestion" rows="3" placeholder="例：会場の駐車場はありますか？"></textarea>
-    </div>
-    <div class="form-group">
-      <label>回答（わかる方は入力してください）</label>
-      <textarea id="faqAnswer" rows="3" placeholder="任意・空欄でも送れます"></textarea>
-    </div>
-    <div class="form-group">
-      <label>ニックネーム（任意）</label>
-      <input type="text" id="faqName" placeholder="例：山田クラスの田中">
-    </div>
-    <button class="btn-primary" onclick="submitFaq()">質問を送信する</button>
-    <div class="success-msg" id="successMsg">✅ 送信しました！確認後FAQに追加します。ありがとうございます。</div>
-
-    <!-- Pending list (shown same session) -->
-    <div id="pendingFaqs" style="margin-top:20px;"></div>
-  </section>
 </div>
 
-<!-- FOOTER -->
+<!-- ═══ MEMBERS ═══ -->
+<div class="wrap">
+  <div class="sec">
+    <div class="sec-head">
+      <div class="sec-icon amber">👥</div>
+      <div>
+        <div class="sec-label">MEMBERS</div>
+        <div class="sec-title">クラスメイトの声</div>
+      </div>
+    </div>
+
+    <div class="member-grid">
+
+      <div class="member-card">
+        <div class="member-name">
+          寺岡先生（よしこ）
+          <span class="member-badge badge-attend">参加予定</span>
+        </div>
+        <div class="member-text">
+          3月末で一応教員生活に区切りをつけて、今色々荷物の整理をしているところですが、見つけました😊<br>
+          卒業の時に皆さんからもらったものです。
+          <br><em style="font-size:14px;color:var(--text-light);">（ノートに「広島県立五日市高等学校 3年8組 寺岡 先生」と書かれていたそうです）</em>
+        </div>
+      </div>
+
+      <div class="member-card">
+        <div class="member-name">
+          池田くん（T. Ikeda）
+          <span class="member-badge badge-skip">今回は欠席</span>
+        </div>
+        <div class="member-text">
+          皆様、ご無沙汰しております。グループに参加させていただきました。<br>
+          今は千葉県流山市在住、メーカーで働いています。8月以降で海外転勤が決まっており、残念ながら11月は難しい可能性が高いのですが、また皆様と繋がれて嬉しいです。よろしくお願いします！
+        </div>
+      </div>
+
+      <div class="member-card">
+        <div class="member-name">
+          佐藤さん（旧姓：喜多 nanae）
+          <span class="member-badge badge-skip">今回は欠席</span>
+        </div>
+        <div class="member-text">
+          ご無沙汰しております😊 大阪府在住の佐藤（旧姓喜多）です！看護師をして家族3人仲良く暮らしています！11月はおそらく広島に行くのは厳しいかと思いますが、またの機会に皆様に会えるのを楽しみにしています😁
+        </div>
+      </div>
+
+      <div class="member-card">
+        <div class="member-name">
+          廣田くん（よし）
+          <span class="member-badge badge-maybe">できれば参加</span>
+        </div>
+        <div class="member-text">
+          皆様ご無沙汰してます。グループ参加させていただきました。今は山梨県北杜市在住で、野菜関係の仕事をしてます。皆様の近況が聞けて嬉しいです✨ 11月はまだわからないのですが、できれば参加したいです。よろしくお願いします。
+        </div>
+      </div>
+
+      <div class="member-card">
+        <div class="member-name">
+          安井（幹事）
+          <span class="member-badge badge-attend">必ず参加！</span>
+          <span class="member-badge badge-kanji">幹事</span>
+        </div>
+        <div class="member-text">
+          今は大阪の豊中市に住んでいます。仕事は医療システムの開発・保守をやっているので、人間ドック・健診について聞きたいことがあれば気軽に相談してください（医療従事者ではないので参考意見として…）<br><br>
+          Xもやっています →
+          <a href="https://x.com/anjou333" target="_blank" style="color:var(--rust);text-decoration:none;">@anjou333</a>
+          ぜひ相互フォローを！<br><br>
+          11月は必ず参加するので、みなさんとお会いできることを楽しみにしています！
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ═══ FAQ ═══ -->
+  <div class="sec">
+    <div class="sec-head">
+      <div class="sec-icon green">❓</div>
+      <div>
+        <div class="sec-label">FAQ</div>
+        <div class="sec-title">よくある質問</div>
+      </div>
+    </div>
+
+    <div class="faq-list">
+
+      <div class="faq-item" onclick="toggleFaq(this)">
+        <div class="faq-q">
+          <div class="faq-q-mark">Q</div>
+          <div class="faq-q-text">同窓会の形式はどのような感じですか？</div>
+          <div class="faq-arrow">▾</div>
+        </div>
+        <div class="faq-a"><div class="faq-a-inner">テーブルが用意されており、立食ではありません。自由に会場内を行き来できるそうです。</div></div>
+      </div>
+
+      <div class="faq-item" onclick="toggleFaq(this)">
+        <div class="faq-q">
+          <div class="faq-q-mark">Q</div>
+          <div class="faq-q-text">当日何かイベントはありますか？</div>
+          <div class="faq-arrow">▾</div>
+        </div>
+        <div class="faq-a"><div class="faq-a-inner">幹事会にて現在検討中です。決まり次第グループLINEでお知らせします。</div></div>
+      </div>
+
+      <div class="faq-item" onclick="toggleFaq(this)">
+        <div class="faq-q">
+          <div class="faq-q-mark">Q</div>
+          <div class="faq-q-text">24期（2000年卒）だけの同窓会ですか？</div>
+          <div class="faq-arrow">▾</div>
+        </div>
+        <div class="faq-a"><div class="faq-a-inner">いいえ。4期・14期・24期・34期の合同同窓会です。ただし会場は各期ごとに分かれているため、他の期の方と会話することは基本的にありません。</div></div>
+      </div>
+
+      <div class="faq-item" onclick="toggleFaq(this)">
+        <div class="faq-q">
+          <div class="faq-q-mark">Q</div>
+          <div class="faq-q-text">先生は参加されますか？</div>
+          <div class="faq-arrow">▾</div>
+        </div>
+        <div class="faq-a"><div class="faq-a-inner">寺岡先生の参加が予定されています。（ぜひお会いしたいですね！）その他の先生の参加情報も入手でき次第共有します。</div></div>
+      </div>
+
+      <div class="faq-item" onclick="toggleFaq(this)">
+        <div class="faq-q">
+          <div class="faq-q-mark">Q</div>
+          <div class="faq-q-text">食事・ドリンクのスタイルは？</div>
+          <div class="faq-arrow">▾</div>
+        </div>
+        <div class="faq-a"><div class="faq-a-inner">各テーブルに配られた料理を各自が取っていくスタイルです。ドリンクは飲み放題で、飲み物カウンターへ取りに行くかスタッフへ頼む形式です。</div></div>
+      </div>
+
+      <div class="faq-item" onclick="toggleFaq(this)">
+        <div class="faq-q">
+          <div class="faq-q-mark">Q</div>
+          <div class="faq-q-text">二次会はありますか？</div>
+          <div class="faq-arrow">▾</div>
+        </div>
+        <div class="faq-a"><div class="faq-a-inner">2026年5月時点では未確定です。同じ会場で二次会をする場合は別途2,500円かかるそうです。</div></div>
+      </div>
+
+      <div class="faq-item" onclick="toggleFaq(this)">
+        <div class="faq-q">
+          <div class="faq-q-mark">Q</div>
+          <div class="faq-q-text">住所変更の登録をしたくない場合は？</div>
+          <div class="faq-arrow">▾</div>
+        </div>
+        <div class="faq-a"><div class="faq-a-inner">同窓会事務局からの案内状発送のためにも、できるだけ住所登録をお願いします。どうしても登録したくない方は個別にご相談ください。</div></div>
+      </div>
+
+      <div class="faq-item" onclick="toggleFaq(this)">
+        <div class="faq-q">
+          <div class="faq-q-mark">Q</div>
+          <div class="faq-q-text">県外から参加します。1泊した方がいいですか？</div>
+          <div class="faq-arrow">▾</div>
+        </div>
+        <div class="faq-a"><div class="faq-a-inner">終了が20時なので、ゆっくり楽しみたい方は1泊をおすすめします。ただし広島市内のホテルはかなり高いので、「実家」「大竹駅」「岩国駅」周辺がおすすめです。</div></div>
+      </div>
+
+      <div class="faq-item" onclick="toggleFaq(this)">
+        <div class="faq-q">
+          <div class="faq-q-mark">Q</div>
+          <div class="faq-q-text">服装はどうすればいいですか？</div>
+          <div class="faq-arrow">▾</div>
+        </div>
+        <div class="faq-a"><div class="faq-a-inner">ドレスコードは特にありません。お気軽な服装でお越しください。</div></div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- ═══ FOOTER ═══ -->
 <footer>
-  <div class="gold">五高同窓会 2026</div>
-  五日市高校 24期（2000年卒）<br>
-  ホテル広島サンプラザ ／ 2026.11.14
+  <div class="footer-title">🌸 五高同窓会 2026</div>
+  <div class="footer-sub">
+    五日市高校 24期（2000年卒）<br>
+    2026年11月14日（土） 17:00〜<br>
+    ホテル広島サンプラザ
+  </div>
+  <a href="https://www.hiroshima-sunplaza.com/" target="_blank" class="footer-link">会場ウェブサイト →</a>
 </footer>
 
 <script>
-// Tab switching
 function switchTab(name) {
-  document.querySelectorAll('.tab-btn').forEach((b,i) => {
-    b.classList.toggle('active', ['attend','undecided','absent'][i] === name);
+  const names = ['attend','undecided','absent'];
+  document.querySelectorAll('.tab-btn').forEach((b, i) => {
+    b.classList.toggle('active', names[i] === name);
   });
   document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
   document.getElementById('tab-' + name).classList.add('active');
 }
 
-// FAQ accordion
 function toggleFaq(el) {
   const isOpen = el.classList.contains('open');
   document.querySelectorAll('.faq-item.open').forEach(i => i.classList.remove('open'));
   if (!isOpen) el.classList.add('open');
 }
-
-// Submit FAQ
-function submitFaq() {
-  const q = document.getElementById('faqQuestion').value.trim();
-  const a = document.getElementById('faqAnswer').value.trim();
-  const n = document.getElementById('faqName').value.trim();
-  if (!q) { alert('質問内容を入力してください。'); return; }
-
-  // Save to localStorage
-  const faqs = JSON.parse(localStorage.getItem('pending_faqs') || '[]');
-  faqs.push({ q, a, n, ts: Date.now() });
-  localStorage.setItem('pending_faqs', JSON.stringify(faqs));
-
-  // Add to page immediately if answer provided
-  if (a) {
-    addFaqToList(q, a, n, true);
-  }
-
-  document.getElementById('faqQuestion').value = '';
-  document.getElementById('faqAnswer').value = '';
-  document.getElementById('faqName').value = '';
-  document.getElementById('successMsg').style.display = 'block';
-  setTimeout(() => document.getElementById('successMsg').style.display = 'none', 4000);
-  renderPending();
-}
-
-function addFaqToList(q, a, n, animate) {
-  const list = document.getElementById('faqList');
-  const item = document.createElement('div');
-  item.className = 'faq-item';
-  if (animate) item.style.animation = 'fadeUp 0.5s ease both';
-  item.innerHTML = `
-    <div class="faq-q" onclick="toggleFaq(this.parentElement)">
-      <div class="faq-q-mark">Q</div>
-      <div class="faq-q-text">${escHtml(q)}${n ? '<span class="faq-user-badge">'+escHtml(n)+'</span>' : ''}</div>
-      <div class="faq-arrow">▾</div>
-    </div>
-    <div class="faq-a">
-      <div class="faq-a-inner">${escHtml(a)}</div>
-    </div>
-  `;
-  list.appendChild(item);
-}
-
-function escHtml(s) {
-  return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
-}
-
-function renderPending() {
-  const faqs = JSON.parse(localStorage.getItem('pending_faqs') || '[]');
-  const el = document.getElementById('pendingFaqs');
-  if (!faqs.length) { el.innerHTML = ''; return; }
-  el.innerHTML = `<p style="font-size:12px;color:var(--text-light);margin-bottom:10px;letter-spacing:1px;">▸ このセッションで送信された質問</p>` +
-    faqs.map(f => `<div style="background:#fff;border-radius:10px;padding:12px 14px;margin-bottom:8px;font-size:13px;border:1px solid rgba(0,0,0,0.06);">
-      <strong style="color:var(--navy);">Q: ${escHtml(f.q)}</strong>
-      ${f.a ? '<br><span style="color:var(--text-light);">A: '+escHtml(f.a)+'</span>' : '<br><em style="color:#bbb;">回答待ち</em>'}
-    </div>`).join('');
-}
-
-// On load: restore session FAQs
-window.onload = () => renderPending();
 </script>
 </body>
 </html>
