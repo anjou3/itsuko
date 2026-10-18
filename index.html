@@ -16,6 +16,8 @@
     --amber-pale: #fef6e4;
     --green: #4a7c59;
     --green-pale: #edf5f0;
+    --red: #b83232;
+    --red-pale: #fdeaea;
     --text: #2e2a25;
     --text-mid: #5a534a;
     --text-light: #8a8078;
@@ -24,9 +26,7 @@
     --shadow: 0 6px 32px rgba(80,50,20,0.12);
     --r: 18px;
   }
-
   * { box-sizing: border-box; margin: 0; padding: 0; }
-
   body {
     background: var(--bg);
     color: var(--text);
@@ -36,10 +36,10 @@
     -webkit-font-smoothing: antialiased;
   }
 
-  /* ─── HERO ─── */
+  /* HERO */
   .hero {
     background: linear-gradient(160deg, #3d2010 0%, #6b3318 50%, #8b4523 100%);
-    padding: 52px 24px 60px;
+    padding: 52px 24px 64px;
     text-align: center;
     position: relative;
     overflow: hidden;
@@ -52,406 +52,161 @@
     background: var(--bg);
     clip-path: ellipse(55% 100% at 50% 100%);
   }
-  .hero-kamon {
-    font-size: 42px;
-    margin-bottom: 16px;
-    display: block;
-    filter: drop-shadow(0 2px 8px rgba(0,0,0,0.3));
-  }
-  .hero-eyebrow {
-    color: rgba(255,220,160,0.85);
-    font-size: 14px;
-    letter-spacing: 5px;
-    margin-bottom: 12px;
-    font-weight: 400;
-  }
-  .hero-title {
-    font-family: 'Noto Serif JP', serif;
-    font-size: clamp(30px, 9vw, 52px);
-    font-weight: 700;
-    color: #fff;
-    line-height: 1.2;
-    margin-bottom: 6px;
-  }
-  .hero-title span {
-    color: #ffcf80;
-  }
-  .hero-subtitle {
-    color: rgba(255,220,160,0.7);
-    font-size: 15px;
-    margin-bottom: 32px;
-    letter-spacing: 2px;
-  }
-  .hero-chips {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 10px;
-    margin-bottom: 8px;
-  }
-  .chip {
-    background: rgba(255,255,255,0.12);
-    border: 1px solid rgba(255,220,160,0.35);
-    border-radius: 40px;
-    padding: 9px 20px;
-    color: #fff;
-    font-size: 15px;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    backdrop-filter: blur(4px);
-  }
+  .hero-kamon { font-size: 42px; margin-bottom: 16px; display: block; }
+  .hero-eyebrow { color: rgba(255,220,160,0.85); font-size: 14px; letter-spacing: 5px; margin-bottom: 12px; }
+  .hero-title { font-family: 'Noto Serif JP', serif; font-size: clamp(30px,9vw,52px); font-weight: 700; color: #fff; line-height: 1.2; margin-bottom: 6px; }
+  .hero-title span { color: #ffcf80; }
+  .hero-subtitle { color: rgba(255,220,160,0.7); font-size: 15px; margin-bottom: 32px; letter-spacing: 2px; }
+  .hero-chips { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; }
+  .chip { background: rgba(255,255,255,0.12); border: 1px solid rgba(255,220,160,0.35); border-radius: 40px; padding: 9px 20px; color: #fff; font-size: 15px; display: flex; align-items: center; gap: 8px; }
   .chip-em { color: #ffcf80; font-weight: 500; }
 
-  /* ─── SECTIONS ─── */
-  .wrap {
-    max-width: 700px;
-    margin: 0 auto;
-    padding: 0 18px;
+  /* ALERT BANNER */
+  .alert-banner {
+    background: #fff8e1;
+    border-bottom: 3px solid #f0b429;
+    padding: 20px 18px;
+    text-align: center;
   }
+  .alert-banner-inner { max-width: 700px; margin: 0 auto; }
+  .alert-title { font-size: 15px; font-weight: 700; color: #7a4f00; margin-bottom: 6px; letter-spacing: 1px; }
+  .alert-date { font-family: 'Noto Serif JP', serif; font-size: 24px; font-weight: 700; color: #b83232; margin-bottom: 4px; }
+  .alert-sub { font-size: 14px; color: #7a4f00; }
 
-  .sec {
-    padding: 48px 0 8px;
-  }
-
-  .sec-head {
-    display: flex;
-    align-items: center;
-    gap: 14px;
-    margin-bottom: 24px;
-  }
-  .sec-icon {
-    width: 48px; height: 48px;
-    border-radius: 14px;
-    display: flex; align-items: center; justify-content: center;
-    font-size: 24px;
-    flex-shrink: 0;
-  }
+  /* WRAP */
+  .wrap { max-width: 700px; margin: 0 auto; padding: 0 18px; }
+  .sec { padding: 48px 0 8px; }
+  .sec-head { display: flex; align-items: center; gap: 14px; margin-bottom: 24px; }
+  .sec-icon { width: 48px; height: 48px; border-radius: 14px; display: flex; align-items: center; justify-content: center; font-size: 24px; flex-shrink: 0; }
   .sec-icon.rust { background: var(--rust-pale); }
   .sec-icon.amber { background: var(--amber-pale); }
   .sec-icon.green { background: var(--green-pale); }
-  .sec-label {
-    font-size: 13px;
-    color: var(--text-light);
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    margin-bottom: 2px;
-  }
-  .sec-title {
-    font-family: 'Noto Serif JP', serif;
-    font-size: 22px;
-    font-weight: 700;
-    color: var(--text);
-    line-height: 1.3;
-  }
+  .sec-icon.red { background: var(--red-pale); }
+  .sec-label { font-size: 13px; color: var(--text-light); letter-spacing: 2px; text-transform: uppercase; margin-bottom: 2px; }
+  .sec-title { font-family: 'Noto Serif JP', serif; font-size: 22px; font-weight: 700; color: var(--text); line-height: 1.3; }
 
-  /* ─── INFO CARDS ─── */
-  .info-grid {
-    display: grid;
-    gap: 12px;
-  }
-  .info-card {
-    background: var(--card);
+  /* INFO CARDS */
+  .info-grid { display: grid; gap: 12px; }
+  .info-card { background: var(--card); border-radius: var(--r); border: 1px solid var(--border); box-shadow: var(--shadow-sm); padding: 20px 22px; display: flex; align-items: flex-start; gap: 16px; }
+  .ic-icon { font-size: 28px; width: 50px; height: 50px; background: var(--rust-pale); border-radius: 14px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+  .ic-label { font-size: 13px; color: var(--text-light); margin-bottom: 4px; letter-spacing: 1px; }
+  .ic-value { font-family: 'Noto Serif JP', serif; font-size: 18px; font-weight: 600; color: var(--text); line-height: 1.45; }
+  .ic-note { font-size: 14px; color: var(--text-mid); font-weight: 300; margin-top: 3px; line-height: 1.6; }
+
+  /* IMPORTANT BOX */
+  .important-box {
+    background: var(--red-pale);
+    border: 2px solid #e08080;
     border-radius: var(--r);
-    border: 1px solid var(--border);
-    box-shadow: var(--shadow-sm);
+    padding: 22px 22px;
+    margin-bottom: 14px;
+  }
+  .important-box-title {
+    display: flex; align-items: center; gap: 10px;
+    font-size: 16px; font-weight: 700; color: var(--red);
+    margin-bottom: 14px;
+  }
+  .important-box ul { padding-left: 4px; list-style: none; }
+  .important-box ul li {
+    font-size: 16px; color: #5a1a1a; line-height: 1.8;
+    padding: 6px 0; border-bottom: 1px solid rgba(180,80,80,0.15);
+    display: flex; gap: 10px; align-items: flex-start;
+  }
+  .important-box ul li:last-child { border-bottom: none; }
+  .important-box ul li .li-icon { flex-shrink: 0; margin-top: 2px; }
+  .important-date { font-family: 'Noto Serif JP', serif; font-weight: 700; color: var(--red); }
+
+  /* SCHEDULE */
+  .schedule-card { background: var(--card); border-radius: var(--r); border: 1px solid var(--border); box-shadow: var(--shadow-sm); overflow: hidden; }
+  .schedule-item { display: flex; align-items: flex-start; gap: 16px; padding: 16px 20px; border-bottom: 1px solid var(--border); }
+  .schedule-item:last-child { border-bottom: none; }
+  .schedule-time { font-family: 'Noto Serif JP', serif; font-size: 18px; font-weight: 700; color: var(--rust); min-width: 64px; flex-shrink: 0; }
+  .schedule-body { flex: 1; }
+  .schedule-title { font-size: 16px; font-weight: 500; color: var(--text); line-height: 1.4; }
+  .schedule-note { font-size: 14px; color: var(--text-mid); margin-top: 4px; line-height: 1.65; }
+  .schedule-warn { font-size: 13px; color: var(--red); margin-top: 5px; font-weight: 500; }
+
+  /* ATTENDEES */
+  .attendee-box {
+    background: var(--green-pale);
+    border: 1px solid #b0d4bc;
+    border-radius: var(--r);
     padding: 20px 22px;
-    display: flex;
-    align-items: flex-start;
-    gap: 16px;
   }
-  .ic-icon {
-    font-size: 28px;
-    width: 50px; height: 50px;
-    background: var(--rust-pale);
-    border-radius: 14px;
-    display: flex; align-items: center; justify-content: center;
-    flex-shrink: 0;
-  }
-  .ic-label {
-    font-size: 13px;
-    color: var(--text-light);
-    margin-bottom: 4px;
-    letter-spacing: 1px;
-  }
-  .ic-value {
-    font-family: 'Noto Serif JP', serif;
-    font-size: 18px;
-    font-weight: 600;
-    color: var(--text);
-    line-height: 1.45;
-  }
-  .ic-note {
-    font-family: 'Noto Sans JP', sans-serif;
-    font-size: 14px;
-    color: var(--text-mid);
-    font-weight: 300;
-    margin-top: 3px;
-    line-height: 1.6;
-  }
+  .attendee-title { font-size: 15px; font-weight: 700; color: var(--green); margin-bottom: 12px; display: flex; align-items: center; gap: 8px; }
+  .attendee-list { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 12px; }
+  .attendee-tag { background: #fff; border: 1px solid #b0d4bc; border-radius: 20px; padding: 5px 14px; font-size: 15px; color: var(--green); font-weight: 500; }
+  .attendee-note { font-size: 13px; color: #4a7c59; opacity: 0.8; line-height: 1.7; }
 
-  /* ─── NOTICE BANNER ─── */
-  .notice {
-    background: var(--amber-pale);
-    border: 1px solid #f0d090;
+  /* CTA */
+  .cta-box {
+    background: linear-gradient(135deg, #3d2010 0%, #6b3318 100%);
     border-radius: var(--r);
-    padding: 18px 20px;
-    display: flex;
-    gap: 14px;
-    align-items: flex-start;
+    padding: 28px 24px;
+    text-align: center;
     margin-top: 16px;
   }
-  .notice-icon { font-size: 22px; flex-shrink: 0; margin-top: 2px; }
-  .notice-text { font-size: 15px; color: #6b4a10; line-height: 1.75; }
-  .notice-text strong { font-weight: 700; }
+  .cta-text { color: rgba(255,255,255,0.85); font-size: 16px; line-height: 1.8; margin-bottom: 16px; }
+  .cta-text strong { color: #ffcf80; }
+  .cta-btn { display: inline-block; background: #ffcf80; color: #3d2010; font-weight: 700; font-size: 16px; padding: 14px 32px; border-radius: 40px; text-decoration: none; letter-spacing: 1px; }
 
-  /* ─── HOW TO ─── */
-  .how-bg {
-    background: linear-gradient(160deg, #3d2010 0%, #6b3318 100%);
-    margin: 40px 0 0;
-    padding: 48px 18px 56px;
-  }
+  /* HOW-TO */
+  .how-bg { background: linear-gradient(160deg, #3d2010 0%, #6b3318 100%); margin: 40px 0 0; padding: 48px 18px 56px; }
   .how-bg .sec-title { color: #fff; }
-  .how-bg .sec-label { color: rgba(255,210,140,0.7); }
-
-  .tabs {
-    display: flex;
-    gap: 8px;
-    margin-bottom: 24px;
-    flex-wrap: wrap;
-  }
-  .tab-btn {
-    flex: 1;
-    min-width: 80px;
-    padding: 12px 8px;
-    border-radius: 12px;
-    border: 1px solid rgba(255,210,140,0.3);
-    background: rgba(255,255,255,0.07);
-    color: rgba(255,255,255,0.65);
-    font-family: 'Noto Sans JP', sans-serif;
-    font-size: 14px;
-    cursor: pointer;
-    text-align: center;
-    transition: all 0.2s;
-    line-height: 1.4;
-  }
-  .tab-btn.active {
-    background: #ffcf80;
-    border-color: #ffcf80;
-    color: #3d2010;
-    font-weight: 700;
-  }
+  .how-bg .sec-label { color: rgba(255,210,140,0.65); }
+  .tabs { display: flex; gap: 8px; margin-bottom: 24px; flex-wrap: wrap; }
+  .tab-btn { flex: 1; min-width: 80px; padding: 12px 8px; border-radius: 12px; border: 1px solid rgba(255,210,140,0.3); background: rgba(255,255,255,0.07); color: rgba(255,255,255,0.65); font-family: 'Noto Sans JP', sans-serif; font-size: 14px; cursor: pointer; text-align: center; transition: all 0.2s; line-height: 1.4; }
+  .tab-btn.active { background: #ffcf80; border-color: #ffcf80; color: #3d2010; font-weight: 700; }
   .tab-content { display: none; }
   .tab-content.active { display: block; }
-
-  .step {
-    display: flex;
-    gap: 16px;
-    margin-bottom: 24px;
-    position: relative;
-  }
-  .step:not(:last-child)::after {
-    content: '';
-    position: absolute;
-    left: 21px; top: 48px; bottom: -10px;
-    width: 2px;
-    background: rgba(255,210,140,0.2);
-  }
-  .step-num {
-    width: 44px; height: 44px;
-    border-radius: 50%;
-    border: 2px solid #ffcf80;
-    background: rgba(255,207,128,0.12);
-    display: flex; align-items: center; justify-content: center;
-    color: #ffcf80;
-    font-size: 18px;
-    font-weight: 700;
-    flex-shrink: 0;
-  }
+  .step { display: flex; gap: 16px; margin-bottom: 24px; position: relative; }
+  .step:not(:last-child)::after { content: ''; position: absolute; left: 21px; top: 48px; bottom: -10px; width: 2px; background: rgba(255,210,140,0.2); }
+  .step-num { width: 44px; height: 44px; border-radius: 50%; border: 2px solid #ffcf80; background: rgba(255,207,128,0.12); display: flex; align-items: center; justify-content: center; color: #ffcf80; font-size: 18px; font-weight: 700; flex-shrink: 0; }
   .step-body { flex: 1; }
-  .step-title {
-    color: #ffcf80;
-    font-size: 17px;
-    font-weight: 700;
-    margin-bottom: 7px;
-    font-family: 'Noto Serif JP', serif;
-  }
-  .step-text {
-    color: rgba(255,255,255,0.78);
-    font-size: 15px;
-    line-height: 1.8;
-  }
-  .step-text a {
-    color: #ffcf80;
-    text-decoration: none;
-    border-bottom: 1px solid rgba(255,207,128,0.4);
-    word-break: break-all;
-  }
-  .step-tag {
-    display: inline-block;
-    background: rgba(255,207,128,0.18);
-    border: 1px solid rgba(255,207,128,0.35);
-    color: #ffcf80;
-    border-radius: 6px;
-    padding: 3px 12px;
-    font-size: 13px;
-    margin-top: 8px;
-  }
-  .how-note {
-    background: rgba(255,255,255,0.07);
-    border: 1px solid rgba(255,210,140,0.2);
-    border-radius: 14px;
-    padding: 18px 20px;
-    color: rgba(255,255,255,0.72);
-    font-size: 15px;
-    line-height: 1.85;
-  }
+  .step-title { color: #ffcf80; font-size: 17px; font-weight: 700; margin-bottom: 7px; font-family: 'Noto Serif JP', serif; }
+  .step-text { color: rgba(255,255,255,0.78); font-size: 15px; line-height: 1.8; }
+  .step-text a { color: #ffcf80; text-decoration: none; border-bottom: 1px solid rgba(255,207,128,0.4); word-break: break-all; }
+  .step-tag { display: inline-block; background: rgba(255,207,128,0.18); border: 1px solid rgba(255,207,128,0.35); color: #ffcf80; border-radius: 6px; padding: 3px 12px; font-size: 13px; margin-top: 8px; }
+  .how-note { background: rgba(255,255,255,0.07); border: 1px solid rgba(255,210,140,0.2); border-radius: 14px; padding: 18px 20px; color: rgba(255,255,255,0.72); font-size: 15px; line-height: 1.85; }
   .how-note strong { color: #ffcf80; }
 
-  /* ─── MEMBERS ─── */
-  .member-grid {
-    display: grid;
-    gap: 12px;
-  }
-  .member-card {
-    background: var(--card);
-    border-radius: var(--r);
-    border: 1px solid var(--border);
-    box-shadow: var(--shadow-sm);
-    padding: 20px 22px;
-  }
-  .member-name {
-    font-family: 'Noto Serif JP', serif;
-    font-size: 18px;
-    font-weight: 600;
-    color: var(--text);
-    margin-bottom: 8px;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    flex-wrap: wrap;
-  }
-  .member-badge {
-    display: inline-block;
-    padding: 2px 10px;
-    border-radius: 20px;
-    font-size: 12px;
-    font-family: 'Noto Sans JP', sans-serif;
-    font-weight: 500;
-  }
+  /* MEMBERS */
+  .member-grid { display: grid; gap: 12px; }
+  .member-card { background: var(--card); border-radius: var(--r); border: 1px solid var(--border); box-shadow: var(--shadow-sm); padding: 20px 22px; }
+  .member-name { font-family: 'Noto Serif JP', serif; font-size: 18px; font-weight: 600; color: var(--text); margin-bottom: 8px; display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+  .member-badge { display: inline-block; padding: 2px 10px; border-radius: 20px; font-size: 12px; font-family: 'Noto Sans JP', sans-serif; font-weight: 500; }
   .badge-kanji { background: var(--rust-pale); color: var(--rust); }
   .badge-attend { background: var(--green-pale); color: var(--green); }
   .badge-maybe { background: var(--amber-pale); color: var(--amber); }
   .badge-skip { background: #f0f0f0; color: #888; }
-  .member-text {
-    font-size: 15px;
-    color: var(--text-mid);
-    line-height: 1.8;
-  }
+  .member-text { font-size: 15px; color: var(--text-mid); line-height: 1.8; }
 
-  /* ─── FAQ ─── */
+  /* FAQ */
   .faq-list { display: grid; gap: 10px; }
-  .faq-item {
-    background: var(--card);
-    border-radius: var(--r);
-    border: 1px solid var(--border);
-    box-shadow: var(--shadow-sm);
-    overflow: hidden;
-    transition: box-shadow 0.2s;
-  }
-  .faq-item.open {
-    border-color: #e0cbb8;
-    box-shadow: var(--shadow);
-  }
-  .faq-q {
-    display: flex;
-    align-items: flex-start;
-    gap: 14px;
-    padding: 20px 20px;
-    cursor: pointer;
-    user-select: none;
-  }
-  .faq-q-mark {
-    width: 32px; height: 32px;
-    background: var(--rust);
-    color: #fff;
-    border-radius: 10px;
-    display: flex; align-items: center; justify-content: center;
-    font-size: 16px;
-    font-weight: 700;
-    flex-shrink: 0;
-    margin-top: 2px;
-  }
-  .faq-q-text {
-    flex: 1;
-    font-size: 17px;
-    font-weight: 500;
-    color: var(--text);
-    line-height: 1.5;
-  }
-  .faq-arrow {
-    color: var(--rust);
-    font-size: 20px;
-    transition: transform 0.3s;
-    flex-shrink: 0;
-    margin-top: 4px;
-  }
+  .faq-item { background: var(--card); border-radius: var(--r); border: 1px solid var(--border); box-shadow: var(--shadow-sm); overflow: hidden; transition: box-shadow 0.2s; }
+  .faq-item.open { border-color: #e0cbb8; box-shadow: var(--shadow); }
+  .faq-q { display: flex; align-items: flex-start; gap: 14px; padding: 20px 20px; cursor: pointer; user-select: none; }
+  .faq-q-mark { width: 32px; height: 32px; background: var(--rust); color: #fff; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 16px; font-weight: 700; flex-shrink: 0; margin-top: 2px; }
+  .faq-q-text { flex: 1; font-size: 17px; font-weight: 500; color: var(--text); line-height: 1.5; }
+  .faq-arrow { color: var(--rust); font-size: 20px; transition: transform 0.3s; flex-shrink: 0; margin-top: 4px; }
   .faq-item.open .faq-arrow { transform: rotate(180deg); }
-  .faq-a {
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.4s ease;
-  }
+  .faq-a { max-height: 0; overflow: hidden; transition: max-height 0.4s ease; }
   .faq-item.open .faq-a { max-height: 500px; }
-  .faq-a-inner {
-    padding: 0 20px 22px 66px;
-    font-size: 16px;
-    color: var(--text-mid);
-    line-height: 1.85;
-    border-top: 1px solid var(--border);
-    padding-top: 16px;
-  }
+  .faq-a-inner { padding: 0 20px 22px 66px; font-size: 16px; color: var(--text-mid); line-height: 1.85; border-top: 1px solid var(--border); padding-top: 16px; }
 
-  /* ─── FOOTER ─── */
-  footer {
-    background: #2e2010;
-    text-align: center;
-    padding: 44px 20px 40px;
-    margin-top: 56px;
-  }
-  .footer-title {
-    font-family: 'Noto Serif JP', serif;
-    color: #ffcf80;
-    font-size: 20px;
-    font-weight: 600;
-    margin-bottom: 10px;
-  }
-  .footer-sub {
-    color: rgba(255,255,255,0.45);
-    font-size: 14px;
-    line-height: 1.9;
-  }
-  .footer-link {
-    display: inline-block;
-    margin-top: 18px;
-    color: rgba(255,210,140,0.7);
-    font-size: 13px;
-    text-decoration: none;
-    border-bottom: 1px solid rgba(255,210,140,0.3);
-  }
+  /* FOOTER */
+  footer { background: #2e2010; text-align: center; padding: 44px 20px 40px; margin-top: 56px; }
+  .footer-title { font-family: 'Noto Serif JP', serif; color: #ffcf80; font-size: 20px; font-weight: 600; margin-bottom: 10px; }
+  .footer-sub { color: rgba(255,255,255,0.45); font-size: 14px; line-height: 1.9; }
+  .footer-link { display: inline-block; margin-top: 18px; color: rgba(255,210,140,0.7); font-size: 13px; text-decoration: none; border-bottom: 1px solid rgba(255,210,140,0.3); }
 
-  /* ─── DIVIDER ─── */
-  .divider {
-    height: 1px;
-    background: linear-gradient(90deg, transparent, var(--border), transparent);
-    margin: 44px 0 0;
-  }
+  /* notice */
+  .notice { background: var(--amber-pale); border: 1px solid #f0d090; border-radius: var(--r); padding: 18px 20px; display: flex; gap: 14px; align-items: flex-start; margin-top: 16px; }
+  .notice-icon { font-size: 22px; flex-shrink: 0; margin-top: 2px; }
+  .notice-text { font-size: 15px; color: #6b4a10; line-height: 1.75; }
+  .notice-text strong { font-weight: 700; }
 
-  /* ─── ANIMATIONS ─── */
-  @keyframes fadeUp {
-    from { opacity: 0; transform: translateY(24px); }
-    to { opacity: 1; transform: translateY(0); }
-  }
+  @keyframes fadeUp { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: translateY(0); } }
   .hero > * { animation: fadeUp 0.7s ease both; }
   .hero-kamon    { animation-delay: 0.05s; }
   .hero-eyebrow  { animation-delay: 0.15s; }
@@ -462,7 +217,7 @@
 </head>
 <body>
 
-<!-- ═══ HERO ═══ -->
+<!-- HERO -->
 <div class="hero">
   <span class="hero-kamon">🌸</span>
   <div class="hero-eyebrow">五日市高校 ･ 24期</div>
@@ -472,11 +227,20 @@
     <div class="chip">📅 <span class="chip-em">2026年11月14日（土）</span></div>
     <div class="chip">🕔 <span class="chip-em">17:00〜20:00</span></div>
     <div class="chip">📍 <span class="chip-em">ホテル広島サンプラザ</span></div>
-    <div class="chip">💴 <span class="chip-em">会費 7,000円（参考金額）</span></div>
+    <div class="chip">💴 <span class="chip-em">会費 7,000円</span></div>
   </div>
 </div>
 
-<!-- ═══ BASIC INFO ═══ -->
+<!-- 締切アラート -->
+<div class="alert-banner">
+  <div class="alert-banner-inner">
+    <div class="alert-title">⚠️ 参加申込・入金の最終締切</div>
+    <div class="alert-date">11月6日（金）まで！</div>
+    <div class="alert-sub">当日の現金受付・キャンセル・返金もこの日まで</div>
+  </div>
+</div>
+
+<!-- 開催概要 -->
 <div class="wrap">
   <div class="sec">
     <div class="sec-head">
@@ -486,14 +250,13 @@
         <div class="sec-title">開催概要</div>
       </div>
     </div>
-
     <div class="info-grid">
       <div class="info-card">
         <div class="ic-icon">📅</div>
         <div>
           <div class="ic-label">日時</div>
           <div class="ic-value">2026年11月14日（土）</div>
-          <div class="ic-note">17:00〜20:00（3時間）</div>
+          <div class="ic-note">16:30 受付開始 ／ 17:00〜20:00 同期会</div>
         </div>
       </div>
       <div class="info-card">
@@ -501,15 +264,15 @@
         <div>
           <div class="ic-label">会場</div>
           <div class="ic-value">ホテル広島サンプラザ</div>
-          <div class="ic-note"><a href="https://www.hiroshima-sunplaza.com/" style="color:var(--rust);text-decoration:none;" target="_blank">www.hiroshima-sunplaza.com</a><br>4期・14期・24期・34期 合同開催<br>（各期ごとに会場が分かれます）</div>
+          <div class="ic-note"><a href="https://www.hiroshima-sunplaza.com/" style="color:var(--rust);text-decoration:none;" target="_blank">www.hiroshima-sunplaza.com</a><br>受付：各宴会場前ロビー（2階・3階）<br>4期・14期・24期・34期 合同開催</div>
         </div>
       </div>
       <div class="info-card">
         <div class="ic-icon">💴</div>
         <div>
           <div class="ic-label">参加費</div>
-          <div class="ic-value">7,000円（参考金額）</div>
-          <div class="ic-note">案内状同封の振込用紙に記載された金額でお支払いください<br>二次会（同会場）別途 2,500円（未確定）</div>
+          <div class="ic-value">7,000円（確定）</div>
+          <div class="ic-note">案内状同封の振込用紙でお支払いください<br>二次会（同会場）は各期で別途運営</div>
         </div>
       </div>
       <div class="info-card">
@@ -517,19 +280,102 @@
         <div>
           <div class="ic-label">食事・ドリンク</div>
           <div class="ic-value">着席スタイル・飲み放題</div>
-          <div class="ic-note">テーブルに配られる料理を各自が取るスタイルです<br>ドリンクはカウンターorスタッフへ</div>
+          <div class="ic-note">テーブルごとに大皿で提供される形式<br>ドリンクはカウンターorスタッフへ</div>
         </div>
       </div>
     </div>
-
     <div class="notice">
       <div class="notice-icon">👗</div>
-      <div class="notice-text"><strong>服装について：</strong>ドレスコードはありません。お気軽な服装でどうぞ！</div>
+      <div class="notice-text"><strong>服装：</strong>ドレスコードはありません。お気軽な服装でどうぞ！</div>
+    </div>
+  </div>
+
+  <!-- 当日スケジュール -->
+  <div class="sec">
+    <div class="sec-head">
+      <div class="sec-icon rust">🕒</div>
+      <div>
+        <div class="sec-label">SCHEDULE</div>
+        <div class="sec-title">当日のスケジュール</div>
+      </div>
+    </div>
+    <div class="schedule-card">
+      <div class="schedule-item">
+        <div class="schedule-time">16:30</div>
+        <div class="schedule-body">
+          <div class="schedule-title">受付開始</div>
+          <div class="schedule-note">受付は各宴会場前のロビー（2階・3階）です。</div>
+          <div class="schedule-warn">⚠️ 早く到着しすぎると準備ができていない場合があります。16:30以降を目安にお越しください。</div>
+        </div>
+      </div>
+      <div class="schedule-item">
+        <div class="schedule-time">17:00</div>
+        <div class="schedule-body">
+          <div class="schedule-title">📸 集合写真撮影・同期会開始</div>
+          <div class="schedule-note">集合写真は宴会開始前に撮影します。</div>
+          <div class="schedule-warn">⚠️ 遅刻すると全体写真に参加できない場合があります。</div>
+        </div>
+      </div>
+      <div class="schedule-item">
+        <div class="schedule-time">20:00</div>
+        <div class="schedule-body">
+          <div class="schedule-title">同期会終了予定</div>
+          <div class="schedule-note">終了後の二次会は各期で別途運営します。</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 重要事項 -->
+  <div class="sec">
+    <div class="sec-head">
+      <div class="sec-icon red">⚠️</div>
+      <div>
+        <div class="sec-label">IMPORTANT</div>
+        <div class="sec-title">参加申込・キャンセルについて</div>
+      </div>
+    </div>
+    <div class="important-box">
+      <div class="important-box-title">⚠️ 最終締切：<span class="important-date">11月6日（金）</span></div>
+      <ul>
+        <li><span class="li-icon">📣</span><span>参加申込・入金の締切は <strong class="important-date">11月6日（金）</strong> です。当日の現金受付は原則できません。</span></li>
+        <li><span class="li-icon">❗</span><span>キャンセル・返金の受付も <strong class="important-date">11月6日（金）</strong> まで。キャンセルは本人から公式サイトのお問い合わせフォームで連絡してください。</span></li>
+        <li><span class="li-icon">📋</span><span>参加者名簿は公式サイトで確認できます。入金済みなのに名前がない場合はご確認ください。</span></li>
+      </ul>
+    </div>
+
+    <!-- 参加予定者 -->
+    <div class="attendee-box">
+      <div class="attendee-title">👥 現時点での参加予定者</div>
+      <div class="attendee-list">
+        <span class="attendee-tag">寺岡先生</span>
+        <span class="attendee-tag">安井さん</span>
+        <span class="attendee-tag">林さん</span>
+        <span class="attendee-tag">廣田さん</span>
+        <span class="attendee-tag">正木さん</span>
+        <span class="attendee-tag">田中さん</span>
+        <span class="attendee-tag">川本さん</span>
+        <span class="attendee-tag">松井さん</span>
+        <span class="attendee-tag">藤嶋さん</span>
+        <span class="attendee-tag">南さん</span>
+        <span class="attendee-tag">齋藤さん</span>
+        <span class="attendee-tag">杉田さん</span>
+      </div>
+      <div class="attendee-note">※参加者情報はまだ途中段階です。今後、追加・更新していきます。</div>
+    </div>
+
+    <div class="cta-box">
+      <div class="cta-text">
+        懐かしい顔ぶれがずらり！<br>
+        「会えるなら自分も行こうかな」と思ったあなた、<br>
+        <strong>まだ間に合います！申込は11月6日まで😊</strong>
+      </div>
+      <a href="http://itsuko-aa.jp/" target="_blank" class="cta-btn">公式サイトで申し込む →</a>
     </div>
   </div>
 </div>
 
-<!-- ═══ HOW TO ═══ -->
+<!-- 参加手順 -->
 <div class="how-bg">
   <div class="wrap">
     <div class="sec-head" style="margin-bottom:24px;">
@@ -539,64 +385,55 @@
         <div class="sec-title" style="color:#fff;">参加の手順</div>
       </div>
     </div>
-
     <div class="tabs">
       <button class="tab-btn active" onclick="switchTab('attend')">✅ 参加予定</button>
       <button class="tab-btn" onclick="switchTab('undecided')">🤔 迷っている</button>
       <button class="tab-btn" onclick="switchTab('absent')">😔 参加できない</button>
     </div>
 
-    <!-- 参加予定 -->
     <div id="tab-attend" class="tab-content active">
       <div class="step">
         <div class="step-num">①</div>
         <div class="step-body">
-          <div class="step-title">住所変更（6月末まで）</div>
+          <div class="step-title">住所変更（登録）</div>
           <div class="step-text">
-            <a href="http://itsuko-aa.jp/" target="_blank">http://itsuko-aa.jp/</a> にアクセス<br>
-            または「五日市高校同窓会」で検索<br><br>
-            作業時間：約5分<br>
-            卒業回期：<strong style="color:#ffcf80;">24期〔2000（平成12）年〕</strong><br><br>
-            苗字が変わった方は下記を必ず入力してください：<br>
+            <a href="http://itsuko-aa.jp/" target="_blank">http://itsuko-aa.jp/</a> にアクセス、または「五日市高校同窓会」で検索。作業時間は約5分。卒業回期：<strong style="color:#ffcf80;">24期〔2000（平成12）年〕</strong><br><br>
+            苗字が変わった方は必ず入力：<br>
             ・卒業時のお名前（漢字）<br>
             ・卒業時のお名前（かな）
           </div>
-          <div class="step-tag">⏰ 期限：6月末</div>
         </div>
       </div>
       <div class="step">
         <div class="step-num">②</div>
         <div class="step-body">
-          <div class="step-title">入金（8月〜）</div>
+          <div class="step-title">入金</div>
           <div class="step-text">
-            ①で登録した住所に案内状が届きます。<br>
-            同封の振込用紙に記載された金額をお振り込みください。
+            登録した住所に案内状が届きます。同封の振込用紙でお振り込みください。
           </div>
+          <div class="step-tag">⏰ 締切：11月6日（金）</div>
         </div>
       </div>
     </div>
 
-    <!-- 迷っている -->
     <div id="tab-undecided" class="tab-content">
       <div class="how-note">
-        まずは <strong>「①住所変更」だけ</strong> 済ませておきましょう！<br><br>
-        参加の意思は後から決めて大丈夫です。正しい住所に案内状を届けるためにも、住所登録だけは6月末までにお願いします🙏
+        まずは <strong>住所の登録</strong> だけ済ませておきましょう！参加の意思は後から決めて大丈夫です。<br><br>
+        参加申込・入金の締切は <strong>11月6日（金）</strong> です。迷っている方もぜひご検討ください😊
       </div>
     </div>
 
-    <!-- 参加できない -->
     <div id="tab-absent" class="tab-content">
       <div class="how-note">
-        特に手続きは不要です。<br><br>
-        卒業時の住所に案内状が届きますが、そのまま破棄していただいて構いません。<br><br>
-        同窓会からの郵便物を正しい住所に届けたい方は「住所変更」だけお願いします。<br><br>
-        グループLINEはどうぞ引き続きご利用ください 😊<br>まだ連絡がついていない方の情報なども共有する予定です。
+        特に手続きは不要です。卒業時の住所に案内状が届きますが、破棄していただいて構いません。<br><br>
+        同窓会からの郵便物を正しい住所に届けたい方は住所登録だけお願いします。<br><br>
+        グループLINEは引き続きご利用ください 😊
       </div>
     </div>
   </div>
 </div>
 
-<!-- ═══ MEMBERS ═══ -->
+<!-- クラスメイトの声 -->
 <div class="wrap">
   <div class="sec">
     <div class="sec-head">
@@ -606,7 +443,6 @@
         <div class="sec-title">クラスメイトの声</div>
       </div>
     </div>
-
     <div class="member-grid">
 
       <div class="member-card">
@@ -615,8 +451,7 @@
           <span class="member-badge badge-attend">参加予定</span>
         </div>
         <div class="member-text">
-          3月末で一応教員生活に区切りをつけて、今色々荷物の整理をしているところですが、見つけました😊<br>
-          卒業の時に皆さんからもらったものです。
+          3月末で一応教員生活に区切りをつけて、今色々荷物の整理をしているところですが、見つけました😊 卒業の時に皆さんからもらったものです。
           <br><em style="font-size:14px;color:var(--text-light);">（ノートに「広島県立五日市高等学校 3年8組 寺岡 先生」と書かれていたそうです）</em>
         </div>
       </div>
@@ -627,8 +462,7 @@
           <span class="member-badge badge-skip">今回は欠席</span>
         </div>
         <div class="member-text">
-          皆様、ご無沙汰しております。グループに参加させていただきました。<br>
-          今は千葉県流山市在住、メーカーで働いています。8月以降で海外転勤が決まっており、残念ながら11月は難しい可能性が高いのですが、また皆様と繋がれて嬉しいです。よろしくお願いします！
+          皆様、ご無沙汰しております。グループに参加させていただきました。今は千葉県流山市在住、メーカーで働いています。8月以降で海外転勤が決まっており、残念ながら11月は難しい可能性が高いのですが、また皆様と繋がれて嬉しいです。よろしくお願いします！
         </div>
       </div>
 
@@ -645,7 +479,7 @@
       <div class="member-card">
         <div class="member-name">
           廣田くん（よし）
-          <span class="member-badge badge-maybe">できれば参加</span>
+          <span class="member-badge badge-attend">参加予定</span>
         </div>
         <div class="member-text">
           皆様ご無沙汰してます。グループ参加させていただきました。今は山梨県北杜市在住で、野菜関係の仕事をしてます。皆様の近況が聞けて嬉しいです✨ 11月はまだわからないのですが、できれば参加したいです。よろしくお願いします。
@@ -700,7 +534,7 @@
     </div>
   </div>
 
-  <!-- ═══ FAQ ═══ -->
+  <!-- FAQ -->
   <div class="sec">
     <div class="sec-head">
       <div class="sec-icon green">❓</div>
@@ -709,7 +543,6 @@
         <div class="sec-title">よくある質問</div>
       </div>
     </div>
-
     <div class="faq-list">
 
       <div class="faq-item" onclick="toggleFaq(this)">
@@ -718,7 +551,7 @@
           <div class="faq-q-text">同窓会の形式はどのような感じですか？</div>
           <div class="faq-arrow">▾</div>
         </div>
-        <div class="faq-a"><div class="faq-a-inner">テーブルが用意されており、立食ではありません。自由に会場内を行き来できるそうです。</div></div>
+        <div class="faq-a"><div class="faq-a-inner">テーブルが用意されており、立食ではありません。クラス単位を基本にテーブルを配置しますが、人数によっては複数クラスで同じテーブルになる場合があります。自由に会場内を行き来できます。</div></div>
       </div>
 
       <div class="faq-item" onclick="toggleFaq(this)">
@@ -745,7 +578,7 @@
           <div class="faq-q-text">先生は参加されますか？</div>
           <div class="faq-arrow">▾</div>
         </div>
-        <div class="faq-a"><div class="faq-a-inner">寺岡先生の参加が予定されています。（ぜひお会いしたいですね！）その他の先生の参加情報も入手でき次第共有します。</div></div>
+        <div class="faq-a"><div class="faq-a-inner">寺岡先生の参加が予定されています。その他の先生の参加情報も入手でき次第共有します。</div></div>
       </div>
 
       <div class="faq-item" onclick="toggleFaq(this)">
@@ -754,7 +587,7 @@
           <div class="faq-q-text">食事・ドリンクのスタイルは？</div>
           <div class="faq-arrow">▾</div>
         </div>
-        <div class="faq-a"><div class="faq-a-inner">各テーブルに配られた料理を各自が取っていくスタイルです。ドリンクは飲み放題で、飲み物カウンターへ取りに行くかスタッフへ頼む形式です。</div></div>
+        <div class="faq-a"><div class="faq-a-inner">テーブルごとに大皿で配られる形式です。ドリンクは飲み放題で、カウンターへ取りに行くかスタッフへ頼む形式です。</div></div>
       </div>
 
       <div class="faq-item" onclick="toggleFaq(this)">
@@ -763,16 +596,16 @@
           <div class="faq-q-text">二次会はありますか？</div>
           <div class="faq-arrow">▾</div>
         </div>
-        <div class="faq-a"><div class="faq-a-inner">2026年5月時点では未確定です。同じ会場で二次会をする場合は別途2,500円かかるそうです。</div></div>
+        <div class="faq-a"><div class="faq-a-inner">同期会終了後の二次会は、各期で別途運営します。詳細は当日またはLINEでご確認ください。</div></div>
       </div>
 
       <div class="faq-item" onclick="toggleFaq(this)">
         <div class="faq-q">
           <div class="faq-q-mark">Q</div>
-          <div class="faq-q-text">住所変更の登録をしたくない場合は？</div>
+          <div class="faq-q-text">キャンセルしたい場合はどうすればいいですか？</div>
           <div class="faq-arrow">▾</div>
         </div>
-        <div class="faq-a"><div class="faq-a-inner">同窓会事務局からの案内状発送のためにも、できるだけ住所登録をお願いします。どうしても登録したくない方は個別にご相談ください。</div></div>
+        <div class="faq-a"><div class="faq-a-inner">キャンセル・返金の受付は11月6日（金）までです。本人から公式サイト（itsuko-aa.jp）のお問い合わせフォームでご連絡ください。</div></div>
       </div>
 
       <div class="faq-item" onclick="toggleFaq(this)">
@@ -797,12 +630,12 @@
   </div>
 </div>
 
-<!-- ═══ FOOTER ═══ -->
+<!-- FOOTER -->
 <footer>
   <div class="footer-title">🌸 五高同窓会 2026</div>
   <div class="footer-sub">
     五日市高校 24期（2000年卒）<br>
-    2026年11月14日（土） 17:00〜<br>
+    2026年11月14日（土） 16:30受付 / 17:00〜<br>
     ホテル広島サンプラザ
   </div>
   <a href="https://www.hiroshima-sunplaza.com/" target="_blank" class="footer-link">会場ウェブサイト →</a>
@@ -817,7 +650,6 @@ function switchTab(name) {
   document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
   document.getElementById('tab-' + name).classList.add('active');
 }
-
 function toggleFaq(el) {
   const isOpen = el.classList.contains('open');
   document.querySelectorAll('.faq-item.open').forEach(i => i.classList.remove('open'));
