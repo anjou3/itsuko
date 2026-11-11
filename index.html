@@ -73,6 +73,17 @@
   .alert-date { font-family: 'Noto Serif JP', serif; font-size: 24px; font-weight: 700; color: #b83232; margin-bottom: 4px; }
   .alert-sub { font-size: 14px; color: #7a4f00; }
 
+  /* COUNTDOWN */
+  .countdown { background: #fffdf8; padding: 22px 18px 18px; text-align: center; border-bottom: 1px solid var(--border); }
+  .countdown-inner { max-width: 700px; margin: 0 auto; }
+  .countdown-label { font-size: 15px; color: var(--text-mid); letter-spacing: 2px; margin-bottom: 2px; }
+  .countdown-main { font-family: 'Noto Serif JP', serif; color: var(--rust); line-height: 1.2; }
+  .countdown-pre { font-size: 22px; font-weight: 600; margin-right: 6px; }
+  .countdown-num { font-size: 72px; font-weight: 700; }
+  .countdown-unit { font-size: 28px; font-weight: 600; margin-left: 4px; }
+  .countdown-sub { font-size: 14px; color: var(--text-light); margin-top: 4px; }
+  .countdown.done .countdown-main { font-size: 26px; font-weight: 700; padding: 10px 0; }
+
   /* WRAP */
   .wrap { max-width: 700px; margin: 0 auto; padding: 0 18px; }
   .sec { padding: 48px 0 8px; }
@@ -231,8 +242,17 @@
   </div>
 </div>
 
+<!-- カウントダウン -->
+<div class="countdown" id="countdown">
+  <div class="countdown-inner">
+    <div class="countdown-label" id="cdLabel">同窓会まで</div>
+    <div class="countdown-main"><span class="countdown-pre" id="cdPre">あと</span><span class="countdown-num" id="cdNum">--</span><span class="countdown-unit" id="cdUnit">日</span></div>
+    <div class="countdown-sub" id="cdSub">2026年11月14日（土）</div>
+  </div>
+</div>
+
 <!-- 締切アラート -->
-<div class="alert-banner">
+<div class="alert-banner" id="deadlineBanner">
   <div class="alert-banner-inner">
     <div class="alert-title">⚠️ 参加申込・入金の最終締切</div>
     <div class="alert-date">11月6日（金）まで！</div>
@@ -241,11 +261,11 @@
 </div>
 
 <!-- 二次会アラート -->
-<div class="alert-banner" style="background:#edf5f0; border-bottom-color:#4a7c59;">
+<div class="alert-banner" id="nikaiBanner" style="background:#edf5f0; border-bottom-color:#4a7c59;">
   <div class="alert-banner-inner">
     <div class="alert-title" style="color:#2e5c3a;">🍻 二次会も開催決定！（同会場）</div>
     <div class="alert-date" style="color:#4a7c59; font-size:20px;">20:00〜21:30 ／ 2,500円（当日払い）</div>
-    <div class="alert-sub" style="color:#2e5c3a;">90分飲み放題＋おつまみ付き　／　参加希望は <strong>11月3日まで</strong> にクラスLINEへ！</div>
+    <div class="alert-sub" style="color:#2e5c3a;">90分飲み放題＋おつまみ付き<span id="nikaiDeadline">　／　参加希望は <strong>11月3日まで</strong> にクラスLINEへ！</span></div>
   </div>
 </div>
 
@@ -383,71 +403,13 @@
       <div class="attendee-note">※参加者情報はまだ途中段階です。今後、追加・更新していきます。</div>
     </div>
 
-    <div class="cta-box">
+    <div class="cta-box" id="ctaBox">
       <div class="cta-text">
         懐かしい顔ぶれがずらり！<br>
         「会えるなら自分も行こうかな」と思ったあなた、<br>
         <strong>まだ間に合います！申込は11月6日まで😊</strong>
       </div>
       <a href="http://itsuko-aa.jp/" target="_blank" class="cta-btn">公式サイトで申し込む →</a>
-    </div>
-  </div>
-</div>
-
-<!-- 参加手順 -->
-<div class="how-bg">
-  <div class="wrap">
-    <div class="sec-head" style="margin-bottom:24px;">
-      <div class="sec-icon" style="background:rgba(255,207,128,0.15);font-size:26px;">📝</div>
-      <div>
-        <div class="sec-label" style="color:rgba(255,210,140,0.65);">HOW TO JOIN</div>
-        <div class="sec-title" style="color:#fff;">参加の手順</div>
-      </div>
-    </div>
-    <div class="tabs">
-      <button class="tab-btn active" onclick="switchTab('attend')">✅ 参加予定</button>
-      <button class="tab-btn" onclick="switchTab('undecided')">🤔 迷っている</button>
-      <button class="tab-btn" onclick="switchTab('absent')">😔 参加できない</button>
-    </div>
-
-    <div id="tab-attend" class="tab-content active">
-      <div class="step">
-        <div class="step-num">①</div>
-        <div class="step-body">
-          <div class="step-title">住所変更（登録）</div>
-          <div class="step-text">
-            <a href="http://itsuko-aa.jp/" target="_blank">http://itsuko-aa.jp/</a> にアクセス、または「五日市高校同窓会」で検索。作業時間は約5分。卒業回期：<strong style="color:#ffcf80;">24期〔2000（平成12）年〕</strong><br><br>
-            苗字が変わった方は必ず入力：<br>
-            ・卒業時のお名前（漢字）<br>
-            ・卒業時のお名前（かな）
-          </div>
-        </div>
-      </div>
-      <div class="step">
-        <div class="step-num">②</div>
-        <div class="step-body">
-          <div class="step-title">入金</div>
-          <div class="step-text">
-            登録した住所に案内状が届きます。同封の振込用紙でお振り込みください。
-          </div>
-          <div class="step-tag">⏰ 締切：11月6日（金）</div>
-        </div>
-      </div>
-    </div>
-
-    <div id="tab-undecided" class="tab-content">
-      <div class="how-note">
-        まずは <strong>住所の登録</strong> だけ済ませておきましょう！参加の意思は後から決めて大丈夫です。<br><br>
-        参加申込・入金の締切は <strong>11月6日（金）</strong> です。迷っている方もぜひご検討ください😊
-      </div>
-    </div>
-
-    <div id="tab-absent" class="tab-content">
-      <div class="how-note">
-        特に手続きは不要です。卒業時の住所に案内状が届きますが、破棄していただいて構いません。<br><br>
-        同窓会からの郵便物を正しい住所に届けたい方は住所登録だけお願いします。<br><br>
-        グループLINEは引き続きご利用ください 😊
-      </div>
     </div>
   </div>
 </div>
@@ -661,14 +623,45 @@
 </footer>
 
 <script>
-function switchTab(name) {
-  const names = ['attend','undecided','absent'];
-  document.querySelectorAll('.tab-btn').forEach((b, i) => {
-    b.classList.toggle('active', names[i] === name);
-  });
-  document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
-  document.getElementById('tab-' + name).classList.add('active');
-}
+// カウントダウン（日本時間で自動計算）
+(function () {
+  function jstToday() {
+    var p = new Intl.DateTimeFormat('en-CA', { timeZone: 'Asia/Tokyo', year: 'numeric', month: '2-digit', day: '2-digit' })
+      .formatToParts(new Date()).reduce(function (o, x) { o[x.type] = x.value; return o; }, {});
+    return Date.UTC(+p.year, +p.month - 1, +p.day);
+  }
+  function hide(id) { var e = document.getElementById(id); if (e) e.style.display = 'none'; }
+  var today = jstToday();
+  var days = Math.round((Date.UTC(2026, 10, 14) - today) / 86400000);
+  var cd = document.getElementById('countdown');
+  var label = document.getElementById('cdLabel');
+  var pre = document.getElementById('cdPre');
+  var num = document.getElementById('cdNum');
+  var unit = document.getElementById('cdUnit');
+  var sub = document.getElementById('cdSub');
+
+  if (days > 0) {
+    num.textContent = days;
+  } else if (days === 0) {
+    cd.classList.add('done');
+    label.textContent = '2026年11月14日（土）';
+    pre.textContent = '🎉 いよいよ本日、同窓会です！';
+    num.textContent = ''; unit.textContent = '';
+    sub.textContent = '16:30受付開始 ／ 17:00〜 ホテル広島サンプラザ';
+  } else {
+    cd.classList.add('done');
+    label.textContent = '🌸 五高同窓会 2026';
+    pre.textContent = '同窓会お疲れさまでした！';
+    num.textContent = ''; unit.textContent = '';
+    sub.textContent = 'ご参加ありがとうございました。またお会いしましょう！';
+  }
+
+  // 締切を過ぎた案内は自動で非表示
+  if (today > Date.UTC(2026, 10, 6)) { hide('deadlineBanner'); hide('ctaBox'); }
+  if (today > Date.UTC(2026, 10, 3)) { hide('nikaiDeadline'); }
+  if (days < 0) { hide('nikaiBanner'); }
+})();
+
 function toggleFaq(el) {
   const isOpen = el.classList.contains('open');
   document.querySelectorAll('.faq-item.open').forEach(i => i.classList.remove('open'));
