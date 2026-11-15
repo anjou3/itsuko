@@ -84,6 +84,20 @@
   .countdown-sub { font-size: 14px; color: var(--text-light); margin-top: 4px; }
   .countdown.done .countdown-main { font-size: 26px; font-weight: 700; padding: 10px 0; }
 
+  /* THANKS */
+  .thanks { background: linear-gradient(180deg, #fff8ef 0%, #fffdf8 100%); padding: 32px 18px 28px; border-bottom: 1px solid var(--border); }
+  .thanks-inner { max-width: 700px; margin: 0 auto; text-align: center; }
+  .thanks-title { font-family: 'Noto Serif JP', serif; font-size: 26px; font-weight: 700; color: var(--rust); margin-bottom: 10px; line-height: 1.4; }
+  .thanks-text { font-size: 16px; color: var(--text-mid); line-height: 1.85; margin-bottom: 22px; }
+  .thanks-card { display: flex; gap: 16px; align-items: flex-start; text-align: left; border-radius: var(--r); padding: 20px 22px; margin-top: 12px; box-shadow: var(--shadow-sm); }
+  .thanks-card.photo { background: var(--green-pale); border: 1px solid #b0d4bc; }
+  .thanks-card.next { background: var(--amber-pale); border: 1px solid #f0d090; }
+  .thanks-card-icon { font-size: 30px; flex-shrink: 0; line-height: 1.2; }
+  .thanks-card-title { font-size: 14px; font-weight: 700; letter-spacing: 1px; color: var(--text-mid); margin-bottom: 4px; }
+  .thanks-card-date { font-family: 'Noto Serif JP', serif; font-size: 22px; font-weight: 700; color: var(--rust); margin-bottom: 2px; }
+  .thanks-card-text { font-size: 16px; color: var(--text); line-height: 1.8; }
+  .thanks-card-text strong { color: var(--green); }
+
   /* WRAP */
   .wrap { max-width: 700px; margin: 0 auto; padding: 0 18px; }
   .sec { padding: 48px 0 8px; }
@@ -238,34 +252,31 @@
     <div class="chip">📅 <span class="chip-em">2026年11月14日（土）</span></div>
     <div class="chip">🕔 <span class="chip-em">17:00〜20:00</span></div>
     <div class="chip">📍 <span class="chip-em">ホテル広島サンプラザ</span></div>
-    <div class="chip">💴 <span class="chip-em">会費 7,000円</span></div>
   </div>
 </div>
 
-<!-- カウントダウン -->
-<div class="countdown" id="countdown">
-  <div class="countdown-inner">
-    <div class="countdown-label" id="cdLabel">同窓会まで</div>
-    <div class="countdown-main"><span class="countdown-pre" id="cdPre">あと</span><span class="countdown-num" id="cdNum">--</span><span class="countdown-unit" id="cdUnit">日</span></div>
-    <div class="countdown-sub" id="cdSub">2026年11月14日（土）</div>
-  </div>
-</div>
+<!-- お疲れさまでした -->
+<div class="thanks">
+  <div class="thanks-inner">
+    <div class="thanks-title">同窓会お疲れさまでした！🌸</div>
+    <div class="thanks-text">ご参加いただいたみなさん、ありがとうございました。<br>参加できなかったみなさんも、グループLINEでのご声援ありがとうございました。</div>
 
-<!-- 締切アラート -->
-<div class="alert-banner" id="deadlineBanner">
-  <div class="alert-banner-inner">
-    <div class="alert-title">⚠️ 参加申込・入金の最終締切</div>
-    <div class="alert-date">11月6日（金）まで！</div>
-    <div class="alert-sub">当日の現金受付・キャンセル・返金もこの日まで</div>
-  </div>
-</div>
+    <div class="thanks-card photo">
+      <div class="thanks-card-icon">📸</div>
+      <div>
+        <div class="thanks-card-title">写真をお願いします</div>
+        <div class="thanks-card-text">当日の写真をお持ちの方は、<strong>LINEのアルバム</strong>に追加をお願いします！参加できなかった方も楽しみにしています。</div>
+      </div>
+    </div>
 
-<!-- 二次会アラート -->
-<div class="alert-banner" id="nikaiBanner" style="background:#edf5f0; border-bottom-color:#4a7c59;">
-  <div class="alert-banner-inner">
-    <div class="alert-title" style="color:#2e5c3a;">🍻 二次会も開催決定！（同会場）</div>
-    <div class="alert-date" style="color:#4a7c59; font-size:20px;">20:00〜21:30 ／ 2,500円（当日払い）</div>
-    <div class="alert-sub" style="color:#2e5c3a;">90分飲み放題＋おつまみ付き<span id="nikaiDeadline">　／　参加希望は <strong>11月3日まで</strong> にクラスLINEへ！</span></div>
+    <div class="thanks-card next">
+      <div class="thanks-card-icon">🗓️</div>
+      <div>
+        <div class="thanks-card-title">次回の同窓会</div>
+        <div class="thanks-card-date">令和16年（2034年）8月</div>
+        <div class="thanks-card-text">また元気に会いましょう！</div>
+      </div>
+    </div>
   </div>
 </div>
 
@@ -285,7 +296,6 @@
         <div>
           <div class="ic-label">日時</div>
           <div class="ic-value">2026年11月14日（土）</div>
-          <div class="ic-note">16:30 受付開始 ／ 17:00〜20:00 同期会</div>
         </div>
       </div>
       <div class="info-card">
@@ -293,96 +303,15 @@
         <div>
           <div class="ic-label">会場</div>
           <div class="ic-value">ホテル広島サンプラザ</div>
-          <div class="ic-note"><a href="https://www.hiroshima-sunplaza.com/" style="color:var(--rust);text-decoration:none;" target="_blank">www.hiroshima-sunplaza.com</a><br>受付：各宴会場前ロビー（2階・3階）<br>4期・14期・24期・34期 合同開催</div>
-        </div>
-      </div>
-      <div class="info-card">
-        <div class="ic-icon">💴</div>
-        <div>
-          <div class="ic-label">参加費</div>
-          <div class="ic-value">7,000円（確定）</div>
-          <div class="ic-note">案内状同封の振込用紙でお支払いください</div>
-        </div>
-      </div>
-      <div class="info-card">
-        <div class="ic-icon">🍽️</div>
-        <div>
-          <div class="ic-label">食事・ドリンク</div>
-          <div class="ic-value">着席スタイル・飲み放題</div>
-          <div class="ic-note">テーブルごとに大皿で提供される形式<br>ドリンクはカウンターorスタッフへ</div>
-        </div>
-      </div>
-    </div>
-    <div class="notice">
-      <div class="notice-icon">👗</div>
-      <div class="notice-text"><strong>服装：</strong>ドレスコードはありません。お気軽な服装でどうぞ！</div>
-    </div>
-  </div>
-
-  <!-- 当日スケジュール -->
-  <div class="sec">
-    <div class="sec-head">
-      <div class="sec-icon rust">🕒</div>
-      <div>
-        <div class="sec-label">SCHEDULE</div>
-        <div class="sec-title">当日のスケジュール</div>
-      </div>
-    </div>
-    <div class="schedule-card">
-      <div class="schedule-item">
-        <div class="schedule-time">16:30</div>
-        <div class="schedule-body">
-          <div class="schedule-title">受付開始</div>
-          <div class="schedule-note">受付は各宴会場前のロビー（2階・3階）です。</div>
-          <div class="schedule-warn">⚠️ 早く到着しすぎると準備ができていない場合があります。16:30以降を目安にお越しください。</div>
-        </div>
-      </div>
-      <div class="schedule-item">
-        <div class="schedule-time">17:00</div>
-        <div class="schedule-body">
-          <div class="schedule-title">📸 集合写真撮影・同期会開始</div>
-          <div class="schedule-note">集合写真は宴会開始前に撮影します。</div>
-          <div class="schedule-warn">⚠️ 遅刻すると全体写真に参加できない場合があります。</div>
-        </div>
-      </div>
-      <div class="schedule-item">
-        <div class="schedule-time">20:00</div>
-        <div class="schedule-body">
-          <div class="schedule-title">同期会終了予定</div>
-        </div>
-      </div>
-      <div class="schedule-item">
-        <div class="schedule-time">20:00〜</div>
-        <div class="schedule-body">
-          <div class="schedule-title">🍻 二次会（同会場）</div>
-          <div class="schedule-note">会費：2,500円（当日払い）／ 90分飲み放題＋おつまみ付き／ 21:30終了予定</div>
-          <div class="schedule-warn">⚠️ 参加希望の方は【11月3日まで】にクラスLINEへメッセージをお願いします！</div>
         </div>
       </div>
     </div>
   </div>
 
-  <!-- 重要事項 -->
+  <!-- 参加メンバー -->
   <div class="sec">
-    <div class="sec-head">
-      <div class="sec-icon red">⚠️</div>
-      <div>
-        <div class="sec-label">IMPORTANT</div>
-        <div class="sec-title">参加申込・キャンセルについて</div>
-      </div>
-    </div>
-    <div class="important-box">
-      <div class="important-box-title">⚠️ 最終締切：<span class="important-date">11月6日（金）</span></div>
-      <ul>
-        <li><span class="li-icon">📣</span><span>参加申込・入金の締切は <strong class="important-date">11月6日（金）</strong> です。当日の現金受付は原則できません。</span></li>
-        <li><span class="li-icon">❗</span><span>キャンセル・返金の受付も <strong class="important-date">11月6日（金）</strong> まで。キャンセルは本人から公式サイトのお問い合わせフォームで連絡してください。</span></li>
-        <li><span class="li-icon">📋</span><span>参加者名簿は公式サイトで確認できます。入金済みなのに名前がない場合はご確認ください。</span></li>
-      </ul>
-    </div>
-
-    <!-- 参加予定者 -->
     <div class="attendee-box">
-      <div class="attendee-title">👥 現時点での参加予定者</div>
+      <div class="attendee-title">👥 参加メンバー</div>
       <div class="attendee-list">
         <span class="attendee-tag">寺岡先生</span>
         <span class="attendee-tag">安井さん</span>
@@ -400,17 +329,8 @@
         <span class="attendee-tag">原さん</span>
         <span class="attendee-tag">広津さん</span>
       </div>
-      <div class="attendee-note">※参加者情報はまだ途中段階です。今後、追加・更新していきます。</div>
     </div>
 
-    <div class="cta-box" id="ctaBox">
-      <div class="cta-text">
-        懐かしい顔ぶれがずらり！<br>
-        「会えるなら自分も行こうかな」と思ったあなた、<br>
-        <strong>まだ間に合います！申込は11月6日まで😊</strong>
-      </div>
-      <a href="http://itsuko-aa.jp/" target="_blank" class="cta-btn">公式サイトで申し込む →</a>
-    </div>
   </div>
 </div>
 
@@ -429,7 +349,6 @@
       <div class="member-card">
         <div class="member-name">
           寺岡先生（よしこ）
-          <span class="member-badge badge-attend">参加予定</span>
         </div>
         <div class="member-text">
           3月末で一応教員生活に区切りをつけて、今色々荷物の整理をしているところですが、見つけました😊 卒業の時に皆さんからもらったものです。
@@ -440,7 +359,6 @@
       <div class="member-card">
         <div class="member-name">
           池田くん（T. Ikeda）
-          <span class="member-badge badge-skip">今回は欠席</span>
         </div>
         <div class="member-text">
           皆様、ご無沙汰しております。グループに参加させていただきました。今は千葉県流山市在住、メーカーで働いています。8月以降で海外転勤が決まっており、残念ながら11月は難しい可能性が高いのですが、また皆様と繋がれて嬉しいです。よろしくお願いします！
@@ -450,7 +368,6 @@
       <div class="member-card">
         <div class="member-name">
           佐藤さん（旧姓：喜多 nanae）
-          <span class="member-badge badge-skip">今回は欠席</span>
         </div>
         <div class="member-text">
           ご無沙汰しております😊 大阪府在住の佐藤（旧姓喜多）です！看護師をして家族3人仲良く暮らしています！11月はおそらく広島に行くのは厳しいかと思いますが、またの機会に皆様に会えるのを楽しみにしています😁
@@ -460,7 +377,6 @@
       <div class="member-card">
         <div class="member-name">
           廣田くん（よし）
-          <span class="member-badge badge-attend">参加予定</span>
         </div>
         <div class="member-text">
           皆様ご無沙汰してます。グループ参加させていただきました。今は山梨県北杜市在住で、野菜関係の仕事をしてます。皆様の近況が聞けて嬉しいです✨ 11月はまだわからないのですが、できれば参加したいです。よろしくお願いします。
@@ -470,7 +386,6 @@
       <div class="member-card">
         <div class="member-name">
           藤田くん（hira402saka）
-          <span class="member-badge badge-skip">今回は不参加</span>
         </div>
         <div class="member-text">
           改めまして、藤田です。今は神戸市在住で数学関連の仕事をしています。今回は日程の調整が難しく不参加となってしまいますが、懐かしい名前を見て当時の思い出に浸ることができました。寺岡先生、教員生活お疲れさまでした！またお会いできる日を楽しみにしています！
@@ -480,7 +395,6 @@
       <div class="member-card">
         <div class="member-name">
           正木くん
-          <span class="member-badge badge-attend">参加予定</span>
         </div>
         <div class="member-text">
           こんにちは、ご無沙汰してます。正木です。埼玉の深谷市というド暑いところに住んでいます。化学メーカー勤めてます。相変わらず、化学大好きっ子です。最近、英語ちょろり勉強中でございます。11月参加したいです。よろしくお願いします。楽しみです。
@@ -490,7 +404,6 @@
       <div class="member-card">
         <div class="member-name">
           原田さん（きょうこ）
-          <span class="member-badge badge-maybe">参加難しいかも</span>
         </div>
         <div class="member-text">
           恭子は、きょうこでも、原田（旧姓ですが）恭子です。同窓会、小さい子がいるから、いけないかもしれないけど、ライン入れてみました。前回同窓会して随分たつけど、2年8組、3年8組はよかったので、入ってみました！ 先生は元気でしょうか？ よろしくおねがいします 😌
@@ -500,7 +413,6 @@
       <div class="member-card">
         <div class="member-name">
           安井（幹事）
-          <span class="member-badge badge-attend">必ず参加！</span>
           <span class="member-badge badge-kanji">幹事</span>
         </div>
         <div class="member-text">
@@ -515,100 +427,6 @@
     </div>
   </div>
 
-  <!-- FAQ -->
-  <div class="sec">
-    <div class="sec-head">
-      <div class="sec-icon green">❓</div>
-      <div>
-        <div class="sec-label">FAQ</div>
-        <div class="sec-title">よくある質問</div>
-      </div>
-    </div>
-    <div class="faq-list">
-
-      <div class="faq-item" onclick="toggleFaq(this)">
-        <div class="faq-q">
-          <div class="faq-q-mark">Q</div>
-          <div class="faq-q-text">同窓会の形式はどのような感じですか？</div>
-          <div class="faq-arrow">▾</div>
-        </div>
-        <div class="faq-a"><div class="faq-a-inner">テーブルが用意されており、立食ではありません。クラス単位を基本にテーブルを配置しますが、人数によっては複数クラスで同じテーブルになる場合があります。自由に会場内を行き来できます。</div></div>
-      </div>
-
-      <div class="faq-item" onclick="toggleFaq(this)">
-        <div class="faq-q">
-          <div class="faq-q-mark">Q</div>
-          <div class="faq-q-text">当日何かイベントはありますか？</div>
-          <div class="faq-arrow">▾</div>
-        </div>
-        <div class="faq-a"><div class="faq-a-inner">幹事会にて現在検討中です。決まり次第グループLINEでお知らせします。</div></div>
-      </div>
-
-      <div class="faq-item" onclick="toggleFaq(this)">
-        <div class="faq-q">
-          <div class="faq-q-mark">Q</div>
-          <div class="faq-q-text">24期（2000年卒）だけの同窓会ですか？</div>
-          <div class="faq-arrow">▾</div>
-        </div>
-        <div class="faq-a"><div class="faq-a-inner">いいえ。4期・14期・24期・34期の合同同窓会です。ただし会場は各期ごとに分かれているため、他の期の方と会話することは基本的にありません。</div></div>
-      </div>
-
-      <div class="faq-item" onclick="toggleFaq(this)">
-        <div class="faq-q">
-          <div class="faq-q-mark">Q</div>
-          <div class="faq-q-text">先生は参加されますか？</div>
-          <div class="faq-arrow">▾</div>
-        </div>
-        <div class="faq-a"><div class="faq-a-inner">寺岡先生の参加が予定されています。その他の先生の参加情報も入手でき次第共有します。</div></div>
-      </div>
-
-      <div class="faq-item" onclick="toggleFaq(this)">
-        <div class="faq-q">
-          <div class="faq-q-mark">Q</div>
-          <div class="faq-q-text">食事・ドリンクのスタイルは？</div>
-          <div class="faq-arrow">▾</div>
-        </div>
-        <div class="faq-a"><div class="faq-a-inner">テーブルごとに大皿で配られる形式です。ドリンクは飲み放題で、カウンターへ取りに行くかスタッフへ頼む形式です。</div></div>
-      </div>
-
-      <div class="faq-item" onclick="toggleFaq(this)">
-        <div class="faq-q">
-          <div class="faq-q-mark">Q</div>
-          <div class="faq-q-text">二次会はありますか？</div>
-          <div class="faq-arrow">▾</div>
-        </div>
-        <div class="faq-a"><div class="faq-a-inner">あります！同窓会終了後、そのまま同じ会場で開催します。会費は2,500円（当日払い）、90分飲み放題＋おつまみ付きで21:30終了予定です。参加希望の方は<strong>11月3日までにクラスLINEへ</strong>メッセージをお願いします。</div></div>
-      </div>
-
-      <div class="faq-item" onclick="toggleFaq(this)">
-        <div class="faq-q">
-          <div class="faq-q-mark">Q</div>
-          <div class="faq-q-text">キャンセルしたい場合はどうすればいいですか？</div>
-          <div class="faq-arrow">▾</div>
-        </div>
-        <div class="faq-a"><div class="faq-a-inner">キャンセル・返金の受付は11月6日（金）までです。本人から公式サイト（itsuko-aa.jp）のお問い合わせフォームでご連絡ください。</div></div>
-      </div>
-
-      <div class="faq-item" onclick="toggleFaq(this)">
-        <div class="faq-q">
-          <div class="faq-q-mark">Q</div>
-          <div class="faq-q-text">県外から参加します。1泊した方がいいですか？</div>
-          <div class="faq-arrow">▾</div>
-        </div>
-        <div class="faq-a"><div class="faq-a-inner">終了が20時なので、ゆっくり楽しみたい方は1泊をおすすめします。ただし広島市内のホテルはかなり高いので、「実家」「大竹駅」「岩国駅」周辺がおすすめです。</div></div>
-      </div>
-
-      <div class="faq-item" onclick="toggleFaq(this)">
-        <div class="faq-q">
-          <div class="faq-q-mark">Q</div>
-          <div class="faq-q-text">服装はどうすればいいですか？</div>
-          <div class="faq-arrow">▾</div>
-        </div>
-        <div class="faq-a"><div class="faq-a-inner">ドレスコードは特にありません。お気軽な服装でお越しください。</div></div>
-      </div>
-
-    </div>
-  </div>
 </div>
 
 <!-- FOOTER -->
@@ -616,57 +434,11 @@
   <div class="footer-title">🌸 五高同窓会 2026</div>
   <div class="footer-sub">
     五日市高校 24期（2000年卒）<br>
-    2026年11月14日（土） 16:30受付 / 17:00〜<br>
-    ホテル広島サンプラザ
+    2026年11月14日（土） ホテル広島サンプラザ<br>
+    次回：令和16年（2034年）8月
   </div>
-  <a href="https://www.hiroshima-sunplaza.com/" target="_blank" class="footer-link">会場ウェブサイト →</a>
 </footer>
 
-<script>
-// カウントダウン（日本時間で自動計算）
-(function () {
-  function jstToday() {
-    var p = new Intl.DateTimeFormat('en-CA', { timeZone: 'Asia/Tokyo', year: 'numeric', month: '2-digit', day: '2-digit' })
-      .formatToParts(new Date()).reduce(function (o, x) { o[x.type] = x.value; return o; }, {});
-    return Date.UTC(+p.year, +p.month - 1, +p.day);
-  }
-  function hide(id) { var e = document.getElementById(id); if (e) e.style.display = 'none'; }
-  var today = jstToday();
-  var days = Math.round((Date.UTC(2026, 10, 14) - today) / 86400000);
-  var cd = document.getElementById('countdown');
-  var label = document.getElementById('cdLabel');
-  var pre = document.getElementById('cdPre');
-  var num = document.getElementById('cdNum');
-  var unit = document.getElementById('cdUnit');
-  var sub = document.getElementById('cdSub');
 
-  if (days > 0) {
-    num.textContent = days;
-  } else if (days === 0) {
-    cd.classList.add('done');
-    label.textContent = '2026年11月14日（土）';
-    pre.textContent = '🎉 いよいよ本日、同窓会です！';
-    num.textContent = ''; unit.textContent = '';
-    sub.textContent = '16:30受付開始 ／ 17:00〜 ホテル広島サンプラザ';
-  } else {
-    cd.classList.add('done');
-    label.textContent = '🌸 五高同窓会 2026';
-    pre.textContent = '同窓会お疲れさまでした！';
-    num.textContent = ''; unit.textContent = '';
-    sub.textContent = 'ご参加ありがとうございました。またお会いしましょう！';
-  }
-
-  // 締切を過ぎた案内は自動で非表示
-  if (today > Date.UTC(2026, 10, 6)) { hide('deadlineBanner'); hide('ctaBox'); }
-  if (today > Date.UTC(2026, 10, 3)) { hide('nikaiDeadline'); }
-  if (days < 0) { hide('nikaiBanner'); }
-})();
-
-function toggleFaq(el) {
-  const isOpen = el.classList.contains('open');
-  document.querySelectorAll('.faq-item.open').forEach(i => i.classList.remove('open'));
-  if (!isOpen) el.classList.add('open');
-}
-</script>
 </body>
 </html>
